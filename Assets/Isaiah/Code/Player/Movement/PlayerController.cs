@@ -86,14 +86,12 @@ public class PlayerController : MonoBehaviour
 
         //Camera follow
         playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, transform.position + cameraOffset, Time.deltaTime * 7.4f);
-        playerCamera.transform.LookAt(transform.position + new Vector3(-offsetVector.y * 2, 0, offsetVector.x * 2));
+        playerCamera.transform.LookAt(transform.position);
+        playerCamera.transform.localRotation = Quaternion.Euler(70, -90, 0);
 
         //Aim target position and rotation
         targetObject.transform.position = GetAimTargetPos();
-        targetObject.transform.LookAt(new Vector3(transform.position.x, targetObject.transform.position.y, transform.position.z));
-
-        //Player rotation
-        transform.LookAt(new Vector3(targetObject.transform.position.x, transform.position.y, targetObject.transform.position.z));
+        targetObject.transform.localRotation = Quaternion.Euler(90, 0, 0);
     }
 
     Vector3 GetAimTargetPos()
