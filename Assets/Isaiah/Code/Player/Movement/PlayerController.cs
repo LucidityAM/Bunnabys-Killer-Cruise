@@ -6,6 +6,9 @@
 public class PlayerController : MonoBehaviour
 {
     //Player Camera variables
+    public float cameraX;
+    public float cameraY;
+
     public enum CameraDirection { x, z }
     public CameraDirection cameraDirection = CameraDirection.x;
     public float cameraHeight = 20f;
@@ -87,9 +90,10 @@ public class PlayerController : MonoBehaviour
         //Camera follow
         playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, transform.position + cameraOffset, Time.deltaTime * 7.4f);
         playerCamera.transform.LookAt(transform.position);
-        playerCamera.transform.localRotation = Quaternion.Euler(70, -90, 0);
+        playerCamera.transform.localRotation = Quaternion.Euler(cameraX, cameraY, 0);
 
         //Aim target position and rotation
+
         targetObject.transform.position = GetAimTargetPos();
         targetObject.transform.localRotation = Quaternion.Euler(90, 0, 0);
     }
