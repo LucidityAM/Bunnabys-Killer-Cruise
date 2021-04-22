@@ -9,10 +9,12 @@ public class AutoAttack : MonoBehaviour
     GameObject EnemyClicked;
 
     bool isClicked;
+
+    CharacterInfo characterInfo;
     // Start is called before the first frame update
     void Awake()
     {
-        
+        characterInfo = GetComponent<CharacterInfo>();
     }
 
     // Update is called once per frame
@@ -20,43 +22,40 @@ public class AutoAttack : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) && !isClicked)
         {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //Makes a ray at the mouse position
+            RaycastHit hit; //Makes a raycast hit
 
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
                 
             if(Physics.Raycast(ray.origin, ray.direction * 10, out hit, Mathf.Infinity))
             {
-                Debug.Log(hit.collider);
-            }
-
-            
-
-            if (hit.collider != null)
-            {
-                if (hit.collider.gameObject.CompareTag("Enemy") && !isClicked)
+                if (hit.collider != null)
                 {
-                    isClicked = true;
-                    StartAuto(hit.collider.gameObject);
+                    if (hit.collider.gameObject.CompareTag("Enemy") && !isClicked)
+                    {
+                        isClicked = true;
+                        StartCoroutine(StartAuto(hit.collider.gameObject));
+                    }
+                    else if (hit.collider.gameObject.tag != "Enemy" && isClicked)
+                    {
+                        isClicked = false;
+                    }//Cancels an auto attack if you click somewhere else for a second time
                 }
-                else if (hit.collider.gameObject.tag != "Enemy" && isClicked)
-                {
-                    isClicked = false;
-                }//Cancels an auto attack if you click on an enemy for a second time
-            }
+            }//Casts a raycast at the position of the mouse and looks for the collider that it hits
+
         } //Checks if the enemy has been clicked and starts the auto attack accordingly
 
     }
-    public void StartAuto(GameObject EnemyClicked)
+    public IEnumerator StartAuto(GameObject EnemyClicked)
     {
-        Debug.Log(EnemyClicked);
-
-        if (isClicked)
+        while (isClicked)
         {
-            if (Time.time > shootingTime)
-            {
-                shootingTime = Time.time * Time.deltaTime;
-                Debug.Log(EnemyClicked);
-            }
+            CharacterInfo enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
+
+            enemyInfo.TakeDamage(characterInfo.damage, characterInfo.critChance);
+
+            Debug.Log(EnemyClicked);
+
+            yield return new WaitForSeconds(shootingTime);
         }
     }
 }
