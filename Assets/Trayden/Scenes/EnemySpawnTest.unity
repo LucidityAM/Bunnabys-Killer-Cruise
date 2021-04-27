@@ -1337,8 +1337,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootingTime: 1
-  Range: 10
-  meleeMultiplier: 1.3
 --- !u!95 &1473507528
 Animator:
   serializedVersion: 3

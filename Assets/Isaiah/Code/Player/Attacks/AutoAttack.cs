@@ -11,6 +11,10 @@ public class AutoAttack : MonoBehaviour
     bool isClicked;
 
     CharacterInfo characterInfo;
+
+    public float Range;
+
+    public float meleeMultiplier;
     // Start is called before the first frame update
     void Awake()
     {
@@ -47,15 +51,34 @@ public class AutoAttack : MonoBehaviour
     }
     public IEnumerator StartAuto(GameObject EnemyClicked)
     {
+        Vector3 directionToTarget = EnemyClicked.transform.position - gameObject.transform.position;
+        float distance = directionToTarget.magnitude;
+
+        Debug.Log(distance);
+
         while (isClicked)
         {
-            CharacterInfo enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
+            if (distance > Range)
+            {
+                CharacterInfo enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
 
-            enemyInfo.TakeDamage(characterInfo.damage, characterInfo.critChance);
+                enemyInfo.TakeDamage(characterInfo.damage, characterInfo.critChance);
 
-            Debug.Log(EnemyClicked);
+                Debug.Log(EnemyClicked);
 
-            yield return new WaitForSeconds(shootingTime);
+                yield return new WaitForSeconds(shootingTime);
+            }
+            else if (distance < Range)
+            {
+                CharacterInfo enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
+
+                enemyInfo.TakeDamage(characterInfo.damage * meleeMultiplier, characterInfo.critChance);
+
+                Debug.Log(EnemyClicked);
+
+                yield return new WaitForSeconds(shootingTime);
+            }
         }
+
     }
 }

@@ -27,14 +27,17 @@ public class CharacterInfo : MonoBehaviour
 
     public void TakeDamage(float damageDealt, float opposingCritChance)
     {
-        System.Random rnd = new System.Random();
-        if(rnd.Next(0, 100) < opposingCritChance)
+        if (this.gameObject != null)
         {
-            health -= (damageDealt - armor) * critMultiplier;
-        }
-        else
-        {
-            health -= (damageDealt - armor);
+            System.Random rnd = new System.Random();
+            if (rnd.Next(0, 100) < opposingCritChance)
+            {
+                health -= (damageDealt - armor) * critMultiplier;
+            }
+            else
+            {
+                health -= (damageDealt - armor);
+            }
         }
     }
 
