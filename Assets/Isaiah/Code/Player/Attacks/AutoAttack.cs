@@ -54,8 +54,6 @@ public class AutoAttack : MonoBehaviour
         Vector3 directionToTarget = EnemyClicked.transform.position - gameObject.transform.position;
         float distance = directionToTarget.magnitude;
 
-        Debug.Log(distance);
-
         while (isClicked)
         {
             if (distance > Range)
@@ -64,8 +62,6 @@ public class AutoAttack : MonoBehaviour
 
                 enemyInfo.TakeDamage(characterInfo.damage, characterInfo.critChance);
 
-                Debug.Log(EnemyClicked);
-
                 yield return new WaitForSeconds(shootingTime);
             }
             else if (distance < Range)
@@ -73,8 +69,6 @@ public class AutoAttack : MonoBehaviour
                 CharacterInfo enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
 
                 enemyInfo.TakeDamage(characterInfo.damage * meleeMultiplier, characterInfo.critChance);
-
-                Debug.Log(EnemyClicked);
 
                 yield return new WaitForSeconds(shootingTime);
             }
