@@ -10,18 +10,31 @@ public class SpecialWeapon1 : MonoBehaviour
     public float dashSpeed;
     public float dashTime;
     public float dashAmount = 3;
+    GameObject player;
     
 
     [Header("Telegraphing")]
     Vector3 position;
-    public Image WeaponTelegraphing;
+    public Image weaponTelegraphing;
 
     [Header("Cooldown")]
     bool isCooldown;
     bool canDash = true;
+    public float cooldown = 10;
+    public Image cooldownImage;
+
+    void Start()
+    {
+        player = this.gameObject;
+        weaponTelegraphing.GetComponent<Image>().enabled = false;
+
+        playerController = GetComponent<PlayerController>();
+    }
 
     void Update()
     {
+        DashAbility();
+
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -30,26 +43,51 @@ public class SpecialWeapon1 : MonoBehaviour
             position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
         }
 
-        
+        //Ability 1 Canvas Inputs
+        Quaternion transRot = Quaternion.LookRotation(position - player.transform.position);
+        transRot.eulerAngles = new Vector3(0, transRot.eulerAngles.y, transRot.eulerAngles.z);
+
+        weaponTelegraphing.transform.rotation = Quaternion.Lerp(transRot, weaponTelegraphing.transform.rotation, 0f);
     }
 
     public void DashAbility()
     {
         if(Input.GetKey(KeyCode.R) && isCooldown == false)
         {
-            WeaponTelegraphing.GetComponent<Image>().enabled = true;
+            weaponTelegraphing.GetComponent<Image>().enabled = true;
         }
 
-        if (WeaponTelegraphing.GetComponent<Image>().enabled == true && Input.GetKeyUp(KeyCode.R))
+        if (weaponTelegraphing.GetComponent<Image>().enabled == true && Input.GetKeyUp(KeyCode.R))
         {
             if (canDash & dashAmount > 0)
             {
-                isCooldown = true;
+                dashAmount -= 1;
+                cooldownImage.fillAmount = 1;
 
-                //StartCoroutine()
+                StartCoroutine(Dash());
             }
-
         }
 
+        if (dashAmount != 3)
+        {
+            cooldownImage.fillAmount -= 1 / cooldown * Time.deltaTime;
+
+            if (weaponTelegraphing.fillAmount <= 0)
+            {
+                weaponTelegraphing.fillAmount = 0;
+                dashAmount++;
+            }
+
+            if(dashAmount == 0)
+            {
+                isCooldown = true;
+                weaponTelegraphing.GetComponent<Image>().enabled = false;
+            }
+        }
+    }
+
+    IEnumerator Dash()
+    {
+        yield return null;
     }
 }
