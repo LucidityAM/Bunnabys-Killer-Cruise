@@ -49,4 +49,5 @@ public class CharacterInfo : MonoBehaviour
             Destroy(this.gameObject.transform.parent.gameObject);
         }
     }
+
 }
