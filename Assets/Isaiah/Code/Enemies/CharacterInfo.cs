@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class CharacterInfo : MonoBehaviour
 {
-    
+
     //All basic publically accessible stats
+    public float maxHealth;
     public float health;
     public float attackSpeed;
     public float range;
