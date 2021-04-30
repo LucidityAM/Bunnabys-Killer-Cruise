@@ -60,12 +60,12 @@ public class SlingshotQ : MonoBehaviour
     public void SkillshotAbility()
     {
         //Enable the Skillshot Indicator
-        if(Input.GetKey(ability) && isCooldown == false)
+        if(Input.GetKeyDown(ability) && isCooldown == false)
         {
             skillshot.GetComponent<Image>().enabled = true;
         }
 
-        if(skillshot.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0))
+        if(skillshot.GetComponent<Image>().enabled == true && Input.GetKeyUp(ability))
         {
             float currentSpeed = moveScript.speed;
             moveScript.speed = 0;
@@ -89,7 +89,7 @@ public class SlingshotQ : MonoBehaviour
         //anim stuff
 
         yield return new WaitForSeconds(1.5f);
-
+        SpawnProjectile();
         //anim stuff
     }
 
