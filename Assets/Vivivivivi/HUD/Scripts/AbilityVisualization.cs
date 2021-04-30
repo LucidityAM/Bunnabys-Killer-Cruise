@@ -11,6 +11,7 @@ public class AbilityVisualization : MonoBehaviour
     public Image imageQ;
     private float cooldownQ;
     private bool onCooldownQ;
+    SlingshotQ slingshot;
     [Header("E")]
     public Image imageE;
     private float cooldownE;
@@ -37,7 +38,12 @@ public class AbilityVisualization : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CooldownQAbility();
+        CooldownEAbility();
+        CooldownCAbility();
+        CooldownRAbility();
 
+        cooldownQ = slingshot.cooldown;
     }
 
     void CooldownQAbility()
