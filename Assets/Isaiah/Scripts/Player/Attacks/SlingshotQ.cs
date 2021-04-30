@@ -30,6 +30,8 @@ public class SlingshotQ : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        slingshotImage.fillAmount = 1;
+
         skillshot.GetComponent<Image>().enabled = false;
 
         moveScript = GetComponent<PlayerController>();
@@ -65,32 +67,45 @@ public class SlingshotQ : MonoBehaviour
             skillshot.GetComponent<Image>().enabled = true;
         }
 
-        if(skillshot.GetComponent<Image>().enabled == true && Input.GetKeyUp(ability))
+        if(skillshot.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0))
         {
-            float currentSpeed = moveScript.speed;
-            moveScript.speed = 0;
 
             if (canSkillshot)
-            {
-                isCooldown = true;
-                slingshotImage.fillAmount = 1;
+            { 
 
                 //Call the Animation
-                //StartCoroutine()
+                StartCoroutine("corSlingshotQ");
             }
 
         }
 
+        if (isCooldown)
+        {
+            slingshotImage.fillAmount += 1 / cooldown * Time.deltaTime;
+            skillshot.GetComponent<Image>().enabled = false;
+
+            if(slingshotImage.fillAmount >= 1)
+            {
+                slingshotImage.fillAmount = 1;
+                isCooldown = false;
+            }
+        }
     }
 
     IEnumerator corSlingshotQ()
     {
+        float currentSpeed = moveScript.speed;
+        moveScript.speed = 0;
         canSkillshot = false;
+        slingshotImage.fillAmount = 0;
+        isCooldown = true;
         //anim stuff
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(.5f);
         SpawnProjectile();
+
         //anim stuff
+        moveScript.speed = currentSpeed;
     }
 
     public void SpawnProjectile()
