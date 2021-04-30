@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject spawnItem;
+    public void Awake() 
     {
-        
+        spawnItem = GameObject.FindGameObjectWithTag("EnemySpawner");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(gameObject.GetComponent<CharacterInfo>().health < 100)
+        {
+            spawnItem.GetComponent<EnemySpawning>().StartCoroutine("SpawnEnemy");
+        }
     }
 }

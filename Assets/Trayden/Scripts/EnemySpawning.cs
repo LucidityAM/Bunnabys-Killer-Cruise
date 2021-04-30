@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class EnemySpawning : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject enemy;
+    public float x;
+    public float z;
     void Start()
     {
-        
+        StartCoroutine("SpawnEnemy");
     }
 
-    // Update is called once per frame
-    void Update()
+    public IEnumerator SpawnEnemy()
     {
-        
+        x = Random.Range(-34.5f, 35);
+        z = Random.Range(-50, 34);
+        Instantiate(enemy, new Vector3(x, 0.5f, z), Quaternion.Euler(-90f, -90f, 0f));
+        yield return null;
     }
 }
