@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         }
 
         Vector3 targetVelocity = Vector3.zero;
-        // Calculate how fast we should be moving
+        //Calculates how fast we should be moving
         if (cameraDirection == CameraDirection.x)
         {
             targetVelocity = new Vector3(Input.GetAxis("Vertical") * (cameraDistance >= 0 ? -1 : 1), 0, Input.GetAxis("Horizontal") * (cameraDistance >= 0 ? 1 : -1));
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
         }
         targetVelocity *= speed;
 
-        // Apply a force that attempts to reach our target velocity
+        //Applies a force that attempts to reach our target velocity
         Vector3 velocity = r.velocity;
         Vector3 velocityChange = (targetVelocity - velocity);
         velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
         velocityChange.y = 0;
         r.AddForce(velocityChange, ForceMode.VelocityChange);
 
-        // We apply gravity manually for more tuning control
+        //Applies gravity manually for more tuning control
         r.AddForce(new Vector3(0, -gravity * r.mass, 0));
 
 
