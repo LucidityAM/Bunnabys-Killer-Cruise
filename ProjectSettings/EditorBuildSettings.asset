@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Isaiah/Scenes/PlayerStuff.unity
+    guid: d8dc96f162610ed48a2c964b27df2f0c
   m_configObjects: {}

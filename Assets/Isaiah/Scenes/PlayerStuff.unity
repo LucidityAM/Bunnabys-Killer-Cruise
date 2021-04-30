@@ -1404,6 +1404,7 @@ MonoBehaviour:
   enemy: {fileID: 8857568126748394560, guid: 0b1d6aad0c157d33bbaf22f4698523af, type: 3}
   x: 0
   z: 0
+  spawnTime: 5
 --- !u!4 &1419571219
 Transform:
   m_ObjectHideFlags: 0
