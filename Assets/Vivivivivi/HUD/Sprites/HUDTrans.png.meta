@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 3b20b424c2be84e4eaeb01401806733c
+guid: be265ff39566c3e47b40e556987120cb
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -6869325624984279803
-    second: HUD_0
-  - first:
-      213: -2205522050570982886
-    second: HUD_1
-  - first:
-      213: 1229794671371557974
-    second: HUD_2
-  - first:
-      213: -7859544607282556093
-    second: HUD_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -52,7 +40,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,91 +109,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: HUD_0
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 15
-        width: 197
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 505e2544db04ba0a0800000000000000
-      internalID: -6869325624984279803
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HUD_1
-      rect:
-        serializedVersion: 2
-        x: 292
-        y: 14
-        width: 197
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1aec6f51696461e0800000000000000
-      internalID: -2205522050570982886
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HUD_2
-      rect:
-        serializedVersion: 2
-        x: 552
-        y: 14
-        width: 198
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65c15c5ecbb111110800000000000000
-      internalID: 1229794671371557974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HUD_3
-      rect:
-        serializedVersion: 2
-        x: 815
-        y: 13
-        width: 198
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 343169242d94de290800000000000000
-      internalID: -7859544607282556093
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

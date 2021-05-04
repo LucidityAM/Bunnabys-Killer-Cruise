@@ -12,7 +12,7 @@ public class SlingshotQ : MonoBehaviour
     EnemyMovement enemyHit;
 
     [Header("Slingshot (Q)")]
-    public Image slingshotImage;
+    public Image slingshotImage; public Image borderImage;
     public float cooldown;
     bool isCooldown = false;
     public KeyCode ability;
