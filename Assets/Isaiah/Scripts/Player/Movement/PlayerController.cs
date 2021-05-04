@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     //Private variables
     Rigidbody r;
     GameObject targetObject;
+    public Animator anim;
     //Mouse cursor Camera offset effect
     Vector2 playerPosOnScreen;
     Vector2 cursorPosition;
@@ -66,16 +67,23 @@ public class PlayerController : MonoBehaviour
         }
         else if (cameraDirection == CameraDirection.z)
         {
-            targetVelocity = new Vector3(Input.GetAxis("Horizontal") * (cameraDistance >= 0 ? -1 : 1), 0, Input.GetAxis("Vertical") * (cameraDistance >= 0 ? -1 : 1));
+            targetVelocity = new Vector3(Input.GetAxis("Horizontal") * (cameraDistance >= 0 ? -1 : 1), 0, Input.GetAxis("Vertical") * (cameraDistance >= 0 ? -1 : 1));  
         }
         targetVelocity *= speed;
 
+        anim.SetFloat("Vertical", -targetVelocity.x);
+        anim.SetFloat("Horizontal", targetVelocity.z);
+
+        anim.SetFloat("Speed", targetVelocity.sqrMagnitude);
+
         //Applies a force that attempts to reach our target velocity
         Vector3 velocity = r.velocity;
+
         Vector3 velocityChange = (targetVelocity - velocity);
         velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
-        velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+        velocityChange.z = Mathf.Clamp(velocityChange.z *1.5f, -maxVelocityChange, maxVelocityChange);
         velocityChange.y = 0;
+
         r.AddForce(velocityChange, ForceMode.VelocityChange);
 
         //Applies gravity manually for more tuning control
