@@ -161,7 +161,6 @@ GameObject:
   - component: {fileID: 2185701423900719264}
   - component: {fileID: 6177802111919156268}
   - component: {fileID: 2460555847248455069}
-  - component: {fileID: 4530926557191845876}
   m_Layer: 5
   m_Name: HUD Border
   m_TagString: Untagged
@@ -229,22 +228,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4530926557191845876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257363439269177891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ed1bd723b719c43afd73a03e296d49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  imageQ: {fileID: 403689453820646577}
-  imageE: {fileID: 0}
-  imageC: {fileID: 0}
-  imageR: {fileID: 0}
 --- !u!1 &1412428612321594560
 GameObject:
   m_ObjectHideFlags: 0

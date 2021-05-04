@@ -67,6 +67,12 @@ public class SlingshotQ : MonoBehaviour
             skillshot.GetComponent<Image>().enabled = true;
         }
 
+        if (Input.GetKeyUp(ability))
+        {
+            skillshot.GetComponent<Image>().enabled = false;
+        }
+
+
         if(skillshot.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0))
         {
 
