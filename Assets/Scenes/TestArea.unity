@@ -348,6 +348,11 @@ PrefabInstance:
       propertyPath: slingshotImage
       value: 
       objectReference: {fileID: 1243701693}
+    - target: {fileID: 6807643134641121242, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: borderImage
+      value: 
+      objectReference: {fileID: 1443990770}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c76f00070b537e49940202830564c4e, type: 3}
 --- !u!1 &732016893
@@ -1297,6 +1302,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1443990770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8600959055070024785, guid: b44e85b343989d04fab84cde0c5ea05c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1703190814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1480661687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1550797065349217418, guid: 4c76f00070b537e49940202830564c4e,

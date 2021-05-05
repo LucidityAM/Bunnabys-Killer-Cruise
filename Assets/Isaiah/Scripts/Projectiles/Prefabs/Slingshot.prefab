@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6343900973726064958}
   m_Layer: 0
   m_Name: Slingshot
-  m_TagString: Untagged
+  m_TagString: PlayerSkillshot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,4 +107,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 45
-  speed: 2
+  speed: 300
