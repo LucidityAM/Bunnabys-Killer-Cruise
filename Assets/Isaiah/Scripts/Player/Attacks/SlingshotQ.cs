@@ -31,6 +31,7 @@ public class SlingshotQ : MonoBehaviour
     void Start()
     {
         slingshotImage.fillAmount = 1;
+        borderImage.fillAmount = 1;
 
         skillshot.GetComponent<Image>().enabled = false;
 
@@ -93,6 +94,7 @@ public class SlingshotQ : MonoBehaviour
             if(slingshotImage.fillAmount >= 1)
             {
                 slingshotImage.fillAmount = 1;
+                borderImage.fillAmount = 1;
                 isCooldown = false;
             }
         }
@@ -104,6 +106,7 @@ public class SlingshotQ : MonoBehaviour
         moveScript.speed = 0;
         canSkillshot = false;
         slingshotImage.fillAmount = 0;
+        borderImage.fillAmount = 0;
         isCooldown = true;
         //anim stuff
 
