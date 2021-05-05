@@ -1434,9 +1434,13 @@ MonoBehaviour:
   dashSpeed: 0
   dashTime: 0
   dashAmount: 3
-  weaponTelegraphing: {fileID: 1886065667}
+  weaponTelegraphing: {fileID: 1630235197}
+  SpecialWeapon1Canvas: {fileID: 29299389}
+  canDash: 1
   cooldown: 10
   cooldownImage: {fileID: 2131368157}
+  cooldownBorder: {fileID: 2083375906}
+  isCooldown: 0
 --- !u!4 &1480661694 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1550797065349217419, guid: 4c76f00070b537e49940202830564c4e,
@@ -1486,7 +1490,7 @@ GameObject:
   - component: {fileID: 1630235198}
   - component: {fileID: 1630235197}
   m_Layer: 5
-  m_Name: Skillshot Image
+  m_Name: Dash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1659,6 +1663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2721842653529218585, guid: b44e85b343989d04fab84cde0c5ea05c,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8745443387921569424, guid: b44e85b343989d04fab84cde0c5ea05c,
         type: 3}
@@ -1979,18 +1988,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
---- !u!114 &1886065667 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 272403981170098179, guid: 4c76f00070b537e49940202830564c4e,
-    type: 3}
-  m_PrefabInstance: {fileID: 714194110}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1915315226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2214,6 +2211,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2083375906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 486655638089439454, guid: b44e85b343989d04fab84cde0c5ea05c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1703190814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2131368157 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2721842653529218585, guid: b44e85b343989d04fab84cde0c5ea05c,

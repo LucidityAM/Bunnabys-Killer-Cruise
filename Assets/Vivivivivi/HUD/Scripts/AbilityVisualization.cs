@@ -24,6 +24,7 @@ public class AbilityVisualization : MonoBehaviour
     public Image imageR;
     private float cooldownR;
     private bool onCooldownR;
+    SpecialWeapon1 dashAbility;
 
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class AbilityVisualization : MonoBehaviour
         CooldownRAbility();
 
         cooldownQ = slingshot.cooldown;
+        cooldownR = dashAbility.cooldown;
     }
 
     void CooldownQAbility()
