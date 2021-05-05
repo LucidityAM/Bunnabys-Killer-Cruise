@@ -59,7 +59,7 @@ public class SpecialWeapon1 : MonoBehaviour
 
         if (weaponTelegraphing.GetComponent<Image>().enabled == true && Input.GetKeyUp(KeyCode.R))
         {
-            if (canDash & dashAmount > 0)
+            if (dashAmount > 0)
             {
                 dashAmount -= 1;
                 cooldownImage.fillAmount = 1;
@@ -70,18 +70,23 @@ public class SpecialWeapon1 : MonoBehaviour
 
         if (dashAmount != 3)
         {
-            cooldownImage.fillAmount -= 1 / cooldown * Time.deltaTime;
+            cooldownImage.fillAmount += 1 / cooldown * Time.deltaTime;
 
-            if (weaponTelegraphing.fillAmount <= 0)
+            if (weaponTelegraphing.fillAmount >= 1)
             {
-                weaponTelegraphing.fillAmount = 0;
+                weaponTelegraphing.fillAmount = 1;
                 dashAmount++;
             }
 
             if(dashAmount == 0)
             {
-                isCooldown = true;
                 weaponTelegraphing.GetComponent<Image>().enabled = false;
+
+                if (cooldownImage.fillAmount >= 1)
+                {
+                    cooldownImage.fillAmount = 1;
+                    isCooldown = false;
+                }
             }
         }
     }
