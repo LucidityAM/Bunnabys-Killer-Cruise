@@ -1431,13 +1431,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c44a125b250104dac9d64210c9b513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashSpeed: 0
-  dashTime: 0
-  dashAmount: 3
+  dashAmount: 100
   weaponTelegraphing: {fileID: 1630235197}
   SpecialWeapon1Canvas: {fileID: 29299389}
   canDash: 1
-  cooldown: 10
+  cooldown: 4
   cooldownImage: {fileID: 2131368157}
   cooldownBorder: {fileID: 2083375906}
   isCooldown: 0

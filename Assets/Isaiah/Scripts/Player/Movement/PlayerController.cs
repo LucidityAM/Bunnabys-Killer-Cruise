@@ -15,18 +15,22 @@ public class PlayerController : MonoBehaviour
     public float cameraDistance = 7f;
     public Camera playerCamera;
     public GameObject targetIndicatorPrefab;
+
     //Player Controller variables
     public float speed = 5.0f;
     public float gravity = 14.0f;
     public float maxVelocityChange = 10.0f;
+
     //Private variables
-    Rigidbody r;
+    public Rigidbody r;
     GameObject targetObject;
     public Animator anim;
+
     //Mouse cursor Camera offset effect
     Vector2 playerPosOnScreen;
     Vector2 cursorPosition;
     Vector2 offsetVector;
+
     //Plane that represents imaginary floor that will be used to calculate Aim target position
     Plane surfacePlane = new Plane();
 
@@ -88,7 +92,6 @@ public class PlayerController : MonoBehaviour
 
         //Applies gravity manually for more tuning control
         r.AddForce(new Vector3(0, -gravity * r.mass, 0));
-
 
         //Mouse cursor offset effect
         playerPosOnScreen = playerCamera.WorldToViewportPoint(transform.position);
