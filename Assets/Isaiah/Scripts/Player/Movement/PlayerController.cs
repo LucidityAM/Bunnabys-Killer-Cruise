@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
     //Player Controller variables
     public float speed = 5.0f;
+    public float gravity = 14.0f;
     public float maxVelocityChange = 10.0f;
 
     //Private variables
@@ -87,7 +88,10 @@ public class PlayerController : MonoBehaviour
         velocityChange.z = Mathf.Clamp(velocityChange.z *1.5f, -maxVelocityChange, maxVelocityChange);
         velocityChange.y = 0;
 
-        r.AddForce(velocityChange.normalized, ForceMode.VelocityChange);
+        r.AddForce(velocityChange, ForceMode.VelocityChange);
+
+        //Applies gravity manually for more tuning control
+        r.AddForce(new Vector3(0, -gravity * r.mass, 0));
 
         //Mouse cursor offset effect
         playerPosOnScreen = playerCamera.WorldToViewportPoint(transform.position);
