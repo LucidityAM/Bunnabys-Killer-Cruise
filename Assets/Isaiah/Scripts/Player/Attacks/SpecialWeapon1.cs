@@ -8,10 +8,9 @@ public class SpecialWeapon1 : MonoBehaviour
 {
     [Header("Player Movement")]
     PlayerController playerController;
-    public float dashSpeed;
-    public float dashTime;
     public float dashAmount;
     GameObject player;
+    bool isDashButtonDown;
     
 
     [Header("Telegraphing")]
@@ -108,10 +107,31 @@ public class SpecialWeapon1 : MonoBehaviour
         cooldownImage.fillAmount = 0;
         cooldownBorder.fillAmount = 0;
 
+        MovementDash();
+
         if (dashAmount <= 0)
         {
             canDash = false;
         }
         isCooldown = true;
+    }
+
+    public void MovementDash()
+    {
+        float dashAmount = 150f;
+
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+        {
+            position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+        }
+
+        Vector3 moveDirection = (transform.position - position);
+        moveDirection.y = 0;
+        moveDirection.Normalize();
+
+        playerController.r.AddForce(-moveDirection * dashAmount, ForceMode.Impulse);
     }
 }
