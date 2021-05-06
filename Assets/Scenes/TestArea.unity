@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &22599056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3729109745743420253, guid: b44e85b343989d04fab84cde0c5ea05c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1703190814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &25676381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2716,7 +2728,7 @@ MonoBehaviour:
   cooldown: 4
   cooldownImage: {fileID: 2131368157}
   cooldownBorder: {fileID: 2083375906}
-  remainingCharges: {fileID: 0}
+  remainingCharges: {fileID: 22599056}
   isCooldown: 0
 --- !u!4 &1480661694 stripped
 Transform:
