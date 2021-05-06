@@ -23,6 +23,7 @@ public class SpecialWeapon1 : MonoBehaviour
     public float cooldown;
     public Image cooldownImage;
     public Image cooldownBorder;
+    public Text remainingCharges;
     public bool isCooldown;
     int timesDashed;
 
@@ -35,6 +36,8 @@ public class SpecialWeapon1 : MonoBehaviour
         weaponTelegraphing.GetComponent<Image>().enabled = false;
 
         playerController = GetComponent<PlayerController>();
+
+        remainingCharges.text = "";
     }
 
     void Update()
@@ -54,6 +57,15 @@ public class SpecialWeapon1 : MonoBehaviour
         transRot.eulerAngles = new Vector3(0, transRot.eulerAngles.y, transRot.eulerAngles.z);
 
         SpecialWeapon1Canvas.transform.rotation = Quaternion.Lerp(transRot, SpecialWeapon1Canvas.transform.rotation, 0f);
+
+        remainingCharges.text = dashAmount.ToString();
+        if (remainingCharges.text.Equals("0"))
+        {
+            remainingCharges.gameObject.SetActive(false);
+        } else
+        {
+            remainingCharges.gameObject.SetActive(true);
+        }
     }
 
     public void DashAbility()
@@ -94,6 +106,11 @@ public class SpecialWeapon1 : MonoBehaviour
                 canDash = true;
             }
         }
+
+        if(dashAmount >= 1)
+        {
+            cooldownBorder.fillAmount = 1;
+        }
     }
 
     public void Dash()
@@ -105,13 +122,13 @@ public class SpecialWeapon1 : MonoBehaviour
         weaponTelegraphing.GetComponent<Image>().enabled = false;
 
         cooldownImage.fillAmount = 0;
-        cooldownBorder.fillAmount = 0;
 
         MovementDash();
 
         if (dashAmount <= 0)
         {
             canDash = false;
+            cooldownBorder.fillAmount = 0;
         }
         isCooldown = true;
     }

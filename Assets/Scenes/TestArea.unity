@@ -251,6 +251,18 @@ Transform:
   m_Father: {fileID: 1025680708}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
+--- !u!114 &163823061 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8892091374555833227, guid: b44e85b343989d04fab84cde0c5ea05c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1703190814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &234730050 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1550797065599348612, guid: 4c76f00070b537e49940202830564c4e,
@@ -288,6 +300,30 @@ Transform:
   m_Father: {fileID: 1025680708}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
+--- !u!114 &327378319 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3729109745743420253, guid: b44e85b343989d04fab84cde0c5ea05c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1703190814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &600898777 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9205318749180857294, guid: b44e85b343989d04fab84cde0c5ea05c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1703190814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &623193302
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +478,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -864288263580216764, guid: 132caac2dd1d6ed48ba70084fb45eb47,
         type: 3}
+    - target: {fileID: 3681553138604505472, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: slashImage
+      value: 
+      objectReference: {fileID: 600898777}
+    - target: {fileID: 3681553138604505472, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: borderImage
+      value: 
+      objectReference: {fileID: 163823061}
     - target: {fileID: 6807643134641121242, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: slingshotImage
@@ -1438,6 +1484,7 @@ MonoBehaviour:
   cooldown: 4
   cooldownImage: {fileID: 2131368157}
   cooldownBorder: {fileID: 2083375906}
+  remainingCharges: {fileID: 327378319}
   isCooldown: 0
 --- !u!4 &1480661694 stripped
 Transform:
@@ -1671,6 +1718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143064475085020421, guid: b44e85b343989d04fab84cde0c5ea05c,
+        type: 3}
+      propertyPath: m_Name
+      value: R DASH Charges
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b44e85b343989d04fab84cde0c5ea05c, type: 3}
