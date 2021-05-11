@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class CharacterInfo : MonoBehaviour
@@ -19,35 +20,21 @@ public class CharacterInfo : MonoBehaviour
 
     //A random readonly varaiable
     private static readonly System.Random getrandom = new System.Random();
-
-    // Update is called once per frame
-    void Update()
-    {
-        DeathChecker();
-    }
-
     public void TakeDamage(float damageDealt, float opposingCritChance)
     {
-        if (this.gameObject != null)
+        System.Random rnd = new System.Random();
+        if (rnd.Next(0, 100) < opposingCritChance)
         {
-            System.Random rnd = new System.Random();
-            if (rnd.Next(0, 100) < opposingCritChance)
-            {
-                health -= (damageDealt - armor) * critMultiplier;
-            }
-            else
-            {
-                health -= (damageDealt - armor);
-            }
+            health -= (damageDealt - armor) * critMultiplier;
         }
-    }
-
-
-    public void DeathChecker()
-    {
-        if(health <= 0)
+        else
         {
-            Destroy(this.gameObject.transform.parent.gameObject);
+            health -= (damageDealt - armor);
+        }
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);  
         }
     }
 
