@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class AutoAttack : MonoBehaviour
@@ -17,6 +18,8 @@ public class AutoAttack : MonoBehaviour
     public float meleeMultiplier;
 
     public CharacterInfo enemyInfo;
+
+    public bool isUsingAbility;
     // Start is called before the first frame update
     void Awake()
     {
@@ -53,30 +56,49 @@ public class AutoAttack : MonoBehaviour
     }
     public IEnumerator StartAuto(GameObject EnemyClicked)
     {
-        Vector3 directionToTarget = EnemyClicked.transform.position - gameObject.transform.position;
-        float distance = directionToTarget.magnitude;
-
-        while (isClicked)
+        if (StaticVars.isUsingAbility != true)
         {
-            if(EnemyClicked != null)
+            if (EnemyClicked != null)
             {
-                if (distance > Range)
+                Vector3 directionToTarget = EnemyClicked.transform.position - gameObject.transform.position;
+                float distance = directionToTarget.magnitude;
+
+                while (isClicked)
                 {
-                    enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
+                    if (EnemyClicked != null)
+                    {
+                        if (distance > Range)
+                        {
+                            enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
 
-                    enemyInfo.TakeDamage(characterInfo.damage, characterInfo.critChance);
+                            enemyInfo.TakeDamage(characterInfo.damage, characterInfo.critChance);
 
-                    yield return new WaitForSeconds(shootingTime);
+                            yield return new WaitForSeconds(shootingTime);
+                        }
+                        else if (distance < Range)
+                        {
+                            enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
+
+                            enemyInfo.TakeDamage(characterInfo.damage * meleeMultiplier, characterInfo.critChance);
+
+                            yield return new WaitForSeconds(shootingTime);
+                        }
+                    }
+                    else
+                    {
+                        yield break;
+                    }
                 }
-                else if (distance < Range)
-                {
-                    enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
-
-                    enemyInfo.TakeDamage(characterInfo.damage * meleeMultiplier, characterInfo.critChance);
-
-                    yield return new WaitForSeconds(shootingTime);
-                }
-            } 
+            }
+            else
+            {
+                yield break;
+            }
+        }
+        else
+        {
+            yield break;
         }
     }
+    
 }

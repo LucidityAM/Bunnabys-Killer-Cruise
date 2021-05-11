@@ -65,17 +65,21 @@ public class SlingshotQ : MonoBehaviour
         //Enable the Skillshot Indicator
         if(Input.GetKeyDown(ability) && isCooldown == false)
         {
+            StaticVars.isUsingAbility = true;
+
             skillshot.GetComponent<Image>().enabled = true;
         }
 
         if (Input.GetKeyUp(ability))
         {
+            StaticVars.isUsingAbility = false;
             skillshot.GetComponent<Image>().enabled = false;
         }
 
 
         if(skillshot.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0))
         {
+            StaticVars.isUsingAbility = false;
 
             if (canSkillshot)
             { 

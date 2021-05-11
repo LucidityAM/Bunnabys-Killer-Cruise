@@ -22,4 +22,13 @@ public class SlingshotProjectile : MonoBehaviour
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
+
+    public void OnTriggerEnter(Collider collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<CharacterInfo>().TakeDamage(damage, 25);
+            Destroy(gameObject);
+        }
+    }
 }
