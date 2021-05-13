@@ -7,7 +7,6 @@ public class EnemySpawning : MonoBehaviour
     public GameObject enemy;
     public float x;
     public float z;
-    public float spawnTime;
     void Start()
     {
         StartCoroutine("SpawnEnemy");
@@ -15,10 +14,9 @@ public class EnemySpawning : MonoBehaviour
 
     public IEnumerator SpawnEnemy()
     {
-        x = Random.Range(-34.5f, 35);
-        z = Random.Range(-50, 34);
+        x = Random.Range(-20f, 30f);
+        z = Random.Range(-47.5f, 29f);
         Instantiate(enemy, new Vector3(x, 0.5f, z), Quaternion.Euler(-90f, -90f, 0f));
-        yield return new WaitForSeconds(spawnTime);
-        StartCoroutine("SpawnEnemy");
+        yield return null;
     }
 }
