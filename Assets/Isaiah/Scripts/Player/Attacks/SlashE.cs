@@ -25,6 +25,7 @@ public class SlashE : MonoBehaviour
     public Image slashRangeIndicator;
     public Transform player;
     public float damage;
+    public float damageScaler;
 
     // Start is called before the first frame update
     void Start()
@@ -118,10 +119,15 @@ public class SlashE : MonoBehaviour
         {
             if (hitColliders[i].gameObject.CompareTag("Enemy"))
             {
-                //Debug.Log(hitColliders[i].gameObject);
                 if (hitColliders[i].isTrigger)
                 {
-                    hitColliders[i].gameObject.GetComponent<CharacterInfo>().TakeDamage(damage, 0);
+                    float enemyHealth = hitColliders[i].gameObject.GetComponent<CharacterInfo>().health;
+                    float enemyMaxHealth = hitColliders[i].gameObject.GetComponent<CharacterInfo>().maxHealth;
+
+                    float damageMultiplier = enemyMaxHealth / enemyHealth;
+
+                    hitColliders[i].gameObject.GetComponent<CharacterInfo>().TakeDamage
+                        (damage * damageMultiplier * damageScaler, 0);
                 }
             }
         }

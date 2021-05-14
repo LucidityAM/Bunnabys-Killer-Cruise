@@ -2011,6 +2011,15 @@ PrefabInstance:
       propertyPath: remainingCharges
       value: 
       objectReference: {fileID: 22599056}
+    - target: {fileID: 1630235197, guid: 4c76f00070b537e49940202830564c4e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 3045847f6fa1da4489b699b59c76f059, type: 2}
+    - target: {fileID: 272403981170098179, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 3045847f6fa1da4489b699b59c76f059, type: 2}
     - target: {fileID: 1042196170703970263, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -2119,8 +2128,28 @@ PrefabInstance:
     - target: {fileID: 3681553138604505472, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: damage
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 3681553138604505472, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: damageScaler
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898261018801290509, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 3045847f6fa1da4489b699b59c76f059, type: 2}
+    - target: {fileID: 6464359499787177768, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 3045847f6fa1da4489b699b59c76f059, type: 2}
+    - target: {fileID: 6519310190631614084, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 3045847f6fa1da4489b699b59c76f059, type: 2}
     - target: {fileID: 6807643134641121242, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: slingshotImage
@@ -3896,6 +3925,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6821215336247212978, guid: 0b1d6aad0c157d33bbaf22f4698523af,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6821215336247212978, guid: 0b1d6aad0c157d33bbaf22f4698523af,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7552435245173722129, guid: 0b1d6aad0c157d33bbaf22f4698523af,
         type: 3}
       propertyPath: m_Enabled
@@ -3924,7 +3963,7 @@ PrefabInstance:
     - target: {fileID: 7552435245173722135, guid: 0b1d6aad0c157d33bbaf22f4698523af,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.3402629e-17
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 7552435245173722135, guid: 0b1d6aad0c157d33bbaf22f4698523af,
         type: 3}
