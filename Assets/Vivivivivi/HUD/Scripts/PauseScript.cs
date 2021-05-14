@@ -47,7 +47,7 @@ public class PauseScript : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         pauseMenu.SetActive(false);
         isPaused = false;
-        Debug.Log("gaming");
+
     }
 
     public void StartCor(string corName)
