@@ -90,6 +90,7 @@ public class SlashE : MonoBehaviour
                 slashImage.fillAmount = 1;
                 borderImage.fillAmount = 1;
                 isCooldown = false;
+                canSlash = true;
             }
         }
     }
