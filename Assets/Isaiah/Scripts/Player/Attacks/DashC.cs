@@ -28,6 +28,8 @@ public class DashC : MonoBehaviour
     private Vector3 posUp;
     public float maxDashDistance;
 
+    public float damage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,6 +77,7 @@ public class DashC : MonoBehaviour
         //Enable the Skillshot Indicator
         if (Input.GetKeyDown(ability) && isCooldown == false)
         {
+            StaticVars.isUsingAbility = true;
             indicatorRangeCircle.GetComponent<Image>().enabled = true;
             targetCircle.GetComponent<Image>().enabled = true;
 
@@ -82,6 +85,7 @@ public class DashC : MonoBehaviour
 
         if (Input.GetKeyUp(ability))
         {
+            StaticVars.isUsingAbility = false;
             indicatorRangeCircle.GetComponent<Image>().enabled = false;
             targetCircle.GetComponent<Image>().enabled = false;
         }
@@ -89,7 +93,7 @@ public class DashC : MonoBehaviour
 
         if (targetCircle.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0))
         {
-
+            StaticVars.isUsingAbility = false;
             if (canDash)
             {
                 //Call the Animation
@@ -134,7 +138,7 @@ public class DashC : MonoBehaviour
 
     public void MovementDash()
     {
-        float dashAmount = 150f;
+        float dashAmount = 200f;
 
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -148,12 +152,33 @@ public class DashC : MonoBehaviour
         moveDirection.y = 0;
         moveDirection.Normalize();
 
-        moveScript.r.AddForce(-moveDirection * dashAmount, ForceMode.Impulse);
+        moveScript.r.AddForce(-moveDirection * dashAmount, ForceMode.VelocityChange);
     }
 
     void KnockUp()
     {
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 7);
 
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            if (hitColliders[i].gameObject.CompareTag("Enemy"))
+            {
+                if (hitColliders[i].isTrigger)
+                {
+                    hitColliders[i].gameObject.GetComponent<CharacterInfo>().TakeDamage(damage, 0);
+                    //StartCoroutine(CC(hitColliders[i].gameObject));
+                }
+            }
+        }
+    }
+
+    public IEnumerator CC(GameObject enemy)
+    {
+        enemy.GetComponent<EnemyMovement>().enabled = false;
+
+        yield return new WaitForSeconds(.5f);
+
+        enemy.GetComponent<EnemyMovement>().enabled = true;
     }
 }
 

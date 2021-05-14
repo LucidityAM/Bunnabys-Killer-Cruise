@@ -2035,6 +2035,11 @@ PrefabInstance:
       propertyPath: dashBorderImage
       value: 
       objectReference: {fileID: 1636875658}
+    - target: {fileID: 1165167763297840665, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: damage
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1550797065079481053, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3935,25 +3940,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722129, guid: 0b1d6aad0c157d33bbaf22f4698523af,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722130, guid: 0b1d6aad0c157d33bbaf22f4698523af,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7552435245173722132, guid: 0b1d6aad0c157d33bbaf22f4698523af,
         type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722133, guid: 0b1d6aad0c157d33bbaf22f4698523af,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7552435245173722135, guid: 0b1d6aad0c157d33bbaf22f4698523af,
         type: 3}
@@ -4009,11 +3999,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245757168084, guid: 0b1d6aad0c157d33bbaf22f4698523af,
-        type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b1d6aad0c157d33bbaf22f4698523af, type: 3}

@@ -60,17 +60,19 @@ public class SlashE : MonoBehaviour
         //Enable the Skillshot Indicator
         if (Input.GetKeyDown(ability) && isCooldown == false)
         {
+            StaticVars.isUsingAbility = true;
             slashRangeIndicator.GetComponent<Image>().enabled = true;
         }
 
         if (Input.GetKeyUp(ability))
         {
+            StaticVars.isUsingAbility = false;
             slashRangeIndicator.GetComponent<Image>().enabled = false;
         }
 
         if (slashRangeIndicator.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0))
         {
-
+            StaticVars.isUsingAbility = false;
             if (canSlash)
             {
 

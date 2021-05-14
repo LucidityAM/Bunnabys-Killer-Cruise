@@ -75,7 +75,12 @@ public class SpecialWeapon1 : MonoBehaviour
             weaponTelegraphing.GetComponent<Image>().enabled = true;
         }
 
-        if (weaponTelegraphing.GetComponent<Image>().enabled == true && Input.GetKeyUp(KeyCode.R))
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            weaponTelegraphing.GetComponent<Image>().enabled = false;
+        }
+
+        if (weaponTelegraphing.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0))
         {
             if (dashAmount > 0 && canDash)
             {
