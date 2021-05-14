@@ -24,6 +24,7 @@ public class SlashE : MonoBehaviour
     public Canvas slashCanvas;
     public Image slashRangeIndicator;
     public Transform player;
+    public float damage;
 
     // Start is called before the first frame update
     void Start()
@@ -111,7 +112,19 @@ public class SlashE : MonoBehaviour
 
     void Slash()
     {
-        //cringe
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 5);
+
+        for (int i = 0; i < hitColliders.Length; i++)
+        {
+            if (hitColliders[i].gameObject.CompareTag("Enemy"))
+            {
+                //Debug.Log(hitColliders[i].gameObject);
+                if (hitColliders[i].isTrigger)
+                {
+                    hitColliders[i].gameObject.GetComponent<CharacterInfo>().TakeDamage(damage, 0);
+                }
+            }
+        }
     }
 
 
