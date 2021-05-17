@@ -14,6 +14,7 @@ public class CharacterInfo : MonoBehaviour
     public float armor;
     public float damage;
     public float critChance;
+    public bool isDebuffed;
 
     //Private float critMultipler
     float critMultiplier = 1.5f;
