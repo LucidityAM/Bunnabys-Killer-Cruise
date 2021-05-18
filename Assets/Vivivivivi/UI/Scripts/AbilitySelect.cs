@@ -5,15 +5,26 @@ using UnityEngine.UI;
 
 public class AbilitySelect : MonoBehaviour
 {
+
     public GameObject abilityCanvas;
     public GameObject dashButton;
     public GameObject fieldButton;
     public GameObject laserButton;
+    public GameObject player;
 
     public Animator selectTextAnim;
     private Animator dashButtonAnim;
     private Animator fieldButtonAnim;
     private Animator laserButtonAnim;
+
+    public Image rAbilityImage;
+    public GameObject dashText;
+
+    private SpecialWeapon1 dash;
+    private SpecialWeapon2 field;
+    private SpecialWeapon3 laser;
+
+    public Sprite[] rSprites;
 
     private bool menuOpen;
     private bool closing;
@@ -26,6 +37,10 @@ public class AbilitySelect : MonoBehaviour
         dashButtonAnim = dashButton.GetComponent<Animator>();
         fieldButtonAnim = fieldButton.GetComponent<Animator>();
         laserButtonAnim = laserButton.GetComponent<Animator>();
+
+        dash = player.GetComponent<SpecialWeapon1>();
+        //field = field.GetComponent<SpecialWeapon2>();
+        //laser = laser.GetComponent<SpecialWeapon3>();
 
         abilityCanvas.SetActive(false);
         menuOpen = false;
@@ -76,6 +91,33 @@ public class AbilitySelect : MonoBehaviour
     public void ChooseAbility(int abilityInput)
     {
         ability = abilityInput;
+        SetAbility();
         CloseSelect();
+    }
+
+    public void SetAbility()
+    {
+        rAbilityImage.sprite = rSprites[ability];
+        if(ability == 0)
+        {
+            dash.enabled = true;
+            field.enabled = false;
+            laser.enabled = false;
+            dashText.SetActive(true);
+
+        } else if(ability == 1)
+        {
+            dash.enabled = false;
+            field.enabled = true;
+            laser.enabled = false;
+            dashText.SetActive(false);
+        }
+        else
+        {
+            dash.enabled = false;
+            field.enabled = false;
+            laser.enabled = true;
+            dashText.SetActive(false);
+        }
     }
 }
