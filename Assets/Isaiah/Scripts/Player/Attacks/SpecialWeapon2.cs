@@ -44,7 +44,7 @@ public class SpecialWeapon2 : MonoBehaviour
     {
         DeathAbility();
 
-        if (usingDeathField)
+        if (usingDeathField && DeathAreaPrefab != null)
         {
             hitColliders = Physics.OverlapSphere(DeathAreaPrefab.transform.position, 11);
 
@@ -106,7 +106,7 @@ public class SpecialWeapon2 : MonoBehaviour
 
     public void DeathAbility()
     {
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R) && canDeathField && usingDeathField == false)
         {
             weaponTelegraphing.GetComponent<Image>().enabled = true;
         }
