@@ -28,6 +28,7 @@ public class SpecialWeapon2 : MonoBehaviour
     public bool isClearing;
 
     public Collider[] hitColliders;
+    public GameObject DeathAreaPrefab;
 
 
     void Start()
@@ -43,9 +44,9 @@ public class SpecialWeapon2 : MonoBehaviour
     {
         DeathAbility();
 
-        if (usingDeathField)
+        if (usingDeathField && DeathAreaPrefab != null)
         {
-            hitColliders = Physics.OverlapSphere(this.transform.position, 11);
+            hitColliders = Physics.OverlapSphere(DeathAreaPrefab.transform.position, 11);
 
             for (int i = 0; i < hitColliders.Length; i++)
             {
@@ -105,7 +106,7 @@ public class SpecialWeapon2 : MonoBehaviour
 
     public void DeathAbility()
     {
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.R) && canDeathField && usingDeathField == false)
         {
             weaponTelegraphing.GetComponent<Image>().enabled = true;
         }
@@ -144,7 +145,7 @@ public class SpecialWeapon2 : MonoBehaviour
         weaponTelegraphing.GetComponent<Image>().enabled = false;
         usingDeathField = true;
         
-        GameObject DeathAreaPrefab = Instantiate(DeathArea, this.gameObject.transform.localPosition, this.gameObject.transform.rotation);
+        DeathAreaPrefab = Instantiate(DeathArea, this.gameObject.transform.localPosition, this.gameObject.transform.rotation);
 
         yield return new WaitForSeconds(5f);
 
