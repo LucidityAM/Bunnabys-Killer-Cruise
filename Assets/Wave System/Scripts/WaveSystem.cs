@@ -11,12 +11,13 @@ public class WaveSystem : MonoBehaviour
     public int currentWave;
 
     public Wave wave1, wave2, wave3;
-    
 
+    private bool opened;
     // Start is called before the first frame update
     void Start()
     {
         roundState = 0;
+        opened = false;
     }
 
     // Update is called once per frame
@@ -25,13 +26,18 @@ public class WaveSystem : MonoBehaviour
         if(roundState == 0)
         {
             PreRound();
+        } else if (roundState == 1)
+        {
+            Round();
+        } else
+        {
+            PostRound();
         }
     }
 
     public void PreRound()
     {
-        abilitySelect.OpenSelect();
-        Debug.Log("gaming");
+        if (opened == false) { abilitySelect.OpenSelect(); opened = true; }
     }
 
     void Round()
@@ -44,4 +50,17 @@ public class WaveSystem : MonoBehaviour
 
     }
 
+
+    public void AdvanceRoundState()
+    {
+        if (roundState >= 2)
+        {
+            roundState = 0;
+            opened = false;
+        }
+        else
+        {
+            roundState += 1;
+        }
+    }
 }

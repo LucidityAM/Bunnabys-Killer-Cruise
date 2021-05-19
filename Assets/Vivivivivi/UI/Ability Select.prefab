@@ -640,9 +640,10 @@ MonoBehaviour:
   player: {fileID: 0}
   selectTextAnim: {fileID: 1282509351947158930}
   rAbilityImage: {fileID: 0}
+  rAbilityImageFill: {fileID: 0}
   dashText: {fileID: 0}
   rSprites:
-  - {fileID: 21300000, guid: b8ca7e690b1763f409d737306f0135df, type: 3}
+  - {fileID: 21300000, guid: 3b9059efa6057134a9f6f01de7274958, type: 3}
   - {fileID: 21300000, guid: bf9eff6df4ff43841a2a656f1228b977, type: 3}
   - {fileID: 21300000, guid: 09a2fa288acf5d446bb8fede87a1229f, type: 3}
 --- !u!1 &6692441564589992511
