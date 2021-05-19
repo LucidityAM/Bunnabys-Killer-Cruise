@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class SpecialWeapon2 : MonoBehaviour
 {
+    public Animator pAnim;
+
     [Header("Player Movement")]
     GameObject player;
     bool isDeathFieldButtonDown;
@@ -108,16 +110,19 @@ public class SpecialWeapon2 : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.R) && canDeathField && usingDeathField == false)
         {
+            StaticVars.isUsingAbility = true;
             weaponTelegraphing.GetComponent<Image>().enabled = true;
         }
 
         if (Input.GetKeyUp(KeyCode.R))
         {
+            StaticVars.isUsingAbility = false;
             weaponTelegraphing.GetComponent<Image>().enabled = false;
         }
 
         if (weaponTelegraphing.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0) && usingDeathField == false)
         {
+            StaticVars.isUsingAbility = false;
             weaponTelegraphing.GetComponent<Image>().enabled = false;
             StartCoroutine(DeathField());
         }

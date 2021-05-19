@@ -20,6 +20,8 @@ public class AutoAttack : MonoBehaviour
     public CharacterInfo enemyInfo;
 
     public bool isUsingAbility;
+
+    public Animator pAnim;
     // Start is called before the first frame update
     void Awake()
     {
@@ -69,6 +71,8 @@ public class AutoAttack : MonoBehaviour
                     {
                         if (distance > Range)
                         {
+                            pAnim.SetBool("isKnifing", true);
+
                             enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
 
                             enemyInfo.TakeDamage(characterInfo.damage, characterInfo.critChance);
@@ -77,6 +81,8 @@ public class AutoAttack : MonoBehaviour
                         }
                         else if (distance < Range)
                         {
+                            pAnim.SetBool("isKnifing", true);
+
                             enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
 
                             enemyInfo.TakeDamage(characterInfo.damage * meleeMultiplier, characterInfo.critChance);

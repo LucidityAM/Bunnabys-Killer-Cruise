@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SlingshotQ : MonoBehaviour
 {
+    public Animator pAnim;
+
     //In Script
     Animator anim;
     RaycastHit hit;

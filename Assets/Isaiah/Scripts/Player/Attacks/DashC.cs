@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class DashC : MonoBehaviour
 {
+    public Animator pAnim;
+
     //In Script
     Animator anim;
     RaycastHit hit;

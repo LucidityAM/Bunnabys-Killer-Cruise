@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class SlashE : MonoBehaviour
 {
+    public Animator pAnim;
+
     //In Script
     Animator anim;
     RaycastHit hit;
