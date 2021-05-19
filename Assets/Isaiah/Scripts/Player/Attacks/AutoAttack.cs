@@ -49,6 +49,8 @@ public class AutoAttack : MonoBehaviour
                     else if (hit.collider.gameObject.tag != "Enemy" && isClicked)
                     {
                         isClicked = false;
+                        pAnim.SetBool("isShooting", false);
+                        pAnim.SetBool("isKnifing", false);
                     }//Cancels an auto attack if you click somewhere else for a second time
                 }
             }//Casts a raycast at the position of the mouse and looks for the collider that it hits
@@ -62,16 +64,17 @@ public class AutoAttack : MonoBehaviour
         {
             if (EnemyClicked != null)
             {
-                Vector3 directionToTarget = EnemyClicked.transform.position - gameObject.transform.position;
-                float distance = directionToTarget.magnitude;
-
                 while (isClicked)
                 {
                     if (EnemyClicked != null)
                     {
+                        Vector3 directionToTarget = EnemyClicked.transform.position - gameObject.transform.position;
+                        float distance = directionToTarget.magnitude;
+
                         if (distance > Range)
                         {
-                            pAnim.SetBool("isKnifing", true);
+                            pAnim.SetBool("isShooting", true);
+                            pAnim.SetBool("isKnifing", false);
 
                             enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
 
@@ -82,6 +85,7 @@ public class AutoAttack : MonoBehaviour
                         else if (distance < Range)
                         {
                             pAnim.SetBool("isKnifing", true);
+                            pAnim.SetBool("isShooting", false);
 
                             enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
 
@@ -89,15 +93,24 @@ public class AutoAttack : MonoBehaviour
 
                             yield return new WaitForSeconds(shootingTime);
                         }
+                        else
+                        {
+                            pAnim.SetBool("isShooting", false);
+                            pAnim.SetBool("isKnifing", false);
+                        }
                     }
                     else
                     {
+                        pAnim.SetBool("isShooting", false);
+                        pAnim.SetBool("isKnifing", false);
                         yield break;
                     }
                 }
             }
             else
             {
+                pAnim.SetBool("isShooting", false);
+                pAnim.SetBool("isKnifing", false);
                 yield break;
             }
         }
