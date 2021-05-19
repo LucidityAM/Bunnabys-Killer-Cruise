@@ -17,7 +17,7 @@ public class AbilitySelect : MonoBehaviour
     private Animator fieldButtonAnim;
     private Animator laserButtonAnim;
 
-    public Image rAbilityImage;
+    public Image rAbilityImage, rAbilityImageFill;
     public GameObject dashText;
 
     private SpecialWeapon1 dash;
@@ -39,8 +39,8 @@ public class AbilitySelect : MonoBehaviour
         laserButtonAnim = laserButton.GetComponent<Animator>();
 
         dash = player.GetComponent<SpecialWeapon1>();
-        //field = field.GetComponent<SpecialWeapon2>();
-        //laser = laser.GetComponent<SpecialWeapon3>();
+        field = player.GetComponent<SpecialWeapon2>();
+        laser = player.GetComponent<SpecialWeapon3>();
 
         abilityCanvas.SetActive(false);
         menuOpen = false;
@@ -98,6 +98,8 @@ public class AbilitySelect : MonoBehaviour
     public void SetAbility()
     {
         rAbilityImage.sprite = rSprites[ability];
+        rAbilityImageFill.sprite = rSprites[ability];
+
         if(ability == 0)
         {
             dash.enabled = true;
