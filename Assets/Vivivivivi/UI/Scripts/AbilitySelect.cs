@@ -60,14 +60,14 @@ public class AbilitySelect : MonoBehaviour
         }
     }
 
-    void OpenSelect()
+    public void OpenSelect()
     {
         menuOpen = true;
         abilityCanvas.SetActive(true);
         StartCoroutine("DisplayBannersCor");
     }
 
-    void CloseSelect()
+    public void CloseSelect()
     {
         menuOpen = false;
         closing = true;
