@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class SpecialWeapon1 : MonoBehaviour
 {
+    public Animator pAnim;
+
     [Header("Player Movement")]
     PlayerController playerController;
     public float dashAmount;
@@ -73,15 +75,18 @@ public class SpecialWeapon1 : MonoBehaviour
         if(Input.GetKey(KeyCode.R) && dashAmount != 0)
         {
             weaponTelegraphing.GetComponent<Image>().enabled = true;
+            StaticVars.isUsingAbility = true;
         }
 
         if (Input.GetKeyUp(KeyCode.R))
         {
             weaponTelegraphing.GetComponent<Image>().enabled = false;
+            StaticVars.isUsingAbility = false;
         }
 
         if (weaponTelegraphing.GetComponent<Image>().enabled == true && Input.GetMouseButtonDown(0))
         {
+            StaticVars.isUsingAbility = false;
             if (dashAmount > 0 && canDash)
             {
                 Dash();
