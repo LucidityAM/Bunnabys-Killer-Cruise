@@ -7,16 +7,15 @@ public class EnemyMovement : MonoBehaviour
     public GameObject player;
     public GameObject enemySpawner;
     public float speed;
-
     public Collider[] hitColliders;
-    public void Awake() 
+    public void Awake()
     {
-        enemySpawner = GameObject.FindGameObjectWithTag("EnemySpawner");
         player = GameObject.FindGameObjectWithTag("Player");
+        hitColliders = Physics.OverlapSphere(this.transform.position, 3.5f);
     }
     void Update()
     {
-        hitColliders = Physics.OverlapSphere(this.transform.position, 3.5f);
+        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed * Time.deltaTime);
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
@@ -26,15 +25,11 @@ public class EnemyMovement : MonoBehaviour
                 {
                     speed = 0;
                 }
+                else
+                {
+                    speed = 15;
+                }
             }
         }
-
-        if (gameObject.GetComponent<CharacterInfo>().health < 100)
-        {
-            enemySpawner.GetComponent<EnemySpawning>().StartCoroutine("SpawnEnemy");
-            Destroy(gameObject);
-        }
-
-        gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed * Time.deltaTime);
     }
 }
