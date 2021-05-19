@@ -16,19 +16,22 @@ public class WaveSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PreRound();
+        roundState = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(roundState == 0)
+        {
+            PreRound();
+        }
     }
 
-    void PreRound()
+    public void PreRound()
     {
         abilitySelect.OpenSelect();
-        
+        Debug.Log("gaming");
     }
 
     void Round()
