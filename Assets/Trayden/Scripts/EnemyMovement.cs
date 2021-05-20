@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        hitColliders = Physics.OverlapSphere(this.transform.position, 3.5f);
+        hitColliders = Physics.OverlapSphere(this.transform.position, 6f);
     }
     void Update()
     {
