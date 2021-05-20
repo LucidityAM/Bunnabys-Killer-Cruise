@@ -1184,7 +1184,7 @@ MonoBehaviour:
     type: 3}
   waterCat: {fileID: 7552435245173722132, guid: 8863b99770fb1d2ca8f4def4b9ecfe29,
     type: 3}
-  waveSystem: {fileID: 452532576}
+  waveSystem: {fileID: 0}
   enemies: []
   x: 0
   z: 0
