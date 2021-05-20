@@ -151,16 +151,16 @@ public class SpecialWeapon2 : MonoBehaviour
         usingDeathField = true;
         
         DeathAreaPrefab = Instantiate(DeathArea, this.gameObject.transform.localPosition, this.gameObject.transform.rotation);
+        isCooldown = true;
+        cooldownImage.fillAmount = 0;
+        cooldownBorder.fillAmount = 0;
 
         yield return new WaitForSeconds(5f);
 
         Destroy(DeathAreaPrefab);
         hasBeenHealed = false;
 
-        cooldownImage.fillAmount = 0;
-        cooldownBorder.fillAmount = 0;
         canDeathField = false;
-        isCooldown = true;
         usingDeathField = false;
         isClearing = true;
     }

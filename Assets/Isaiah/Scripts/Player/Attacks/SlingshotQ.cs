@@ -116,7 +116,10 @@ public class SlingshotQ : MonoBehaviour
         isCooldown = true;
         //anim stuff
 
-        yield return new WaitForSeconds(.5f);
+        pAnim.SetBool("isShooting", true);
+
+        yield return new WaitForSeconds(.3f);
+
         SpawnProjectile();
 
         //anim stuff
@@ -125,6 +128,8 @@ public class SlingshotQ : MonoBehaviour
 
     public void SpawnProjectile()
     {
+        pAnim.SetBool("isShooting", false);
+
         canSkillshot = true;
         Instantiate(projPrefab, projSpawnPoint.transform.position, projSpawnPoint.transform.rotation);
     }
