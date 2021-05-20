@@ -1184,7 +1184,7 @@ MonoBehaviour:
     type: 3}
   waterCat: {fileID: 7552435245173722132, guid: 8863b99770fb1d2ca8f4def4b9ecfe29,
     type: 3}
-  waveSystem: {fileID: 452532576}
+  waveSystem: {fileID: 0}
   enemies: []
   x: 0
   z: 0
@@ -2184,6 +2184,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1480661688, guid: 4c76f00070b537e49940202830564c4e, type: 3}
+      propertyPath: pAnim
+      value: 
+      objectReference: {fileID: 616820159}
     - target: {fileID: 1630235197, guid: 4c76f00070b537e49940202830564c4e, type: 3}
       propertyPath: m_Material
       value: 
@@ -2222,6 +2226,11 @@ PrefabInstance:
       propertyPath: damage
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 1165167763297840665, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: pAnim
+      value: 
+      objectReference: {fileID: 616820159}
     - target: {fileID: 1550797065079481053, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2327,6 +2336,11 @@ PrefabInstance:
       propertyPath: damageScaler
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3681553138604505472, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: pAnim
+      value: 
+      objectReference: {fileID: 616820159}
     - target: {fileID: 3898261018801290509, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: m_Material
@@ -2367,6 +2381,11 @@ PrefabInstance:
       propertyPath: borderImage
       value: 
       objectReference: {fileID: 1443990770}
+    - target: {fileID: 6807643134641121242, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: pAnim
+      value: 
+      objectReference: {fileID: 616820159}
     - target: {fileID: 9205395880371332962, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: m_SortingLayerID
@@ -5320,7 +5339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa3dd0f59db28747a98fdc9ee4f1b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pAnim: {fileID: 0}
+  pAnim: {fileID: 616820159}
   slingshotImage: {fileID: 2131368157}
   borderImage: {fileID: 2083375906}
   cooldown: 6
@@ -5349,7 +5368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35e0d3159b47b247baaaab43385facf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pAnim: {fileID: 0}
+  pAnim: {fileID: 616820159}
   weaponTelegraphing: {fileID: 463685411}
   DeathArea: {fileID: 4774289990849523688, guid: 143911ceeca29ed469d0756712e2ca0f,
     type: 3}
