@@ -13,6 +13,7 @@ public class SpecialWeapon1 : MonoBehaviour
     public float dashAmount;
     GameObject player;
     bool isDashButtonDown;
+    public GameObject dashLines;
     
 
     [Header("Telegraphing")]
@@ -133,7 +134,7 @@ public class SpecialWeapon1 : MonoBehaviour
 
         cooldownImage.fillAmount = 0;
 
-        MovementDash();
+        StartCoroutine(MovementDash());
 
         if (dashAmount <= 0)
         {
@@ -143,7 +144,7 @@ public class SpecialWeapon1 : MonoBehaviour
         isCooldown = true;
     }
 
-    public void MovementDash()
+    public IEnumerator MovementDash()
     {
         float dashAmount = 150f;
 
@@ -155,10 +156,21 @@ public class SpecialWeapon1 : MonoBehaviour
             position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
         }
 
+        dashLines.SetActive(true);
+
+        Quaternion transRot = Quaternion.LookRotation(player.transform.position - position);
+        transRot.eulerAngles = new Vector3(0, transRot.eulerAngles.y, transRot.eulerAngles.z);
+
+        dashLines.transform.rotation = Quaternion.Lerp(transRot, dashLines.transform.rotation, 0f);
+
         Vector3 moveDirection = (transform.position - position);
         moveDirection.y = 0;
         moveDirection.Normalize();
 
         playerController.r.AddForce(-moveDirection * dashAmount, ForceMode.Impulse);
+
+        yield return new WaitForSeconds(.2f);
+
+        dashLines.SetActive(false);
     }
 }
