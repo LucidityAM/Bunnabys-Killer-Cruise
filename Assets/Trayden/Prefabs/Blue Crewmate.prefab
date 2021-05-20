@@ -544,6 +544,8 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 15
   hitColliders: []
+  hasBeenHit: 0
+  iFramesRunning: 0
 --- !u!1 &7552435245210250367
 GameObject:
   m_ObjectHideFlags: 0

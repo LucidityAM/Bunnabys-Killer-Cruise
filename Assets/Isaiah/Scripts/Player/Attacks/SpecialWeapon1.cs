@@ -34,7 +34,6 @@ public class SpecialWeapon1 : MonoBehaviour
     {
         canDash = true;
         dashAmount = 3;
-        cooldown = 10;
         player = this.gameObject;
         weaponTelegraphing.GetComponent<Image>().enabled = false;
 
@@ -94,7 +93,7 @@ public class SpecialWeapon1 : MonoBehaviour
             }
         }
 
-        if (isCooldown || dashAmount != 3)
+        if (isCooldown || dashAmount <= 3)
         {
             cooldownImage.fillAmount += 1 / cooldown * Time.deltaTime;
 

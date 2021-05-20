@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
     {
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed * Time.deltaTime);
 
-        hitColliders = Physics.OverlapSphere(this.transform.position, 8f);
+        hitColliders = Physics.OverlapSphere(this.transform.position, 5f);
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
