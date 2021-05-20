@@ -131,6 +131,8 @@ public class DashC : MonoBehaviour
 
         yield return new WaitForSeconds(.2f);
         MovementDash();
+
+        pAnim.SetBool("isSlicing", true);
         yield return new WaitForSeconds(0.5f);
         KnockUp();
 
@@ -160,6 +162,8 @@ public class DashC : MonoBehaviour
     void KnockUp()
     {
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 7);
+
+        pAnim.SetBool("isSlicing", false);
 
         for (int i = 0; i < hitColliders.Length; i++)
         {

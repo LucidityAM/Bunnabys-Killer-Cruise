@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 velocityChange = (targetVelocity - velocity);
         velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
-        velocityChange.z = Mathf.Clamp(velocityChange.z *1.5f, -maxVelocityChange, maxVelocityChange);
+        velocityChange.z = Mathf.Clamp(velocityChange.z *1.5f, -maxVelocityChange *1.5f, maxVelocityChange*1.5f);
         velocityChange.y = 0;
 
         r.AddForce(velocityChange, ForceMode.VelocityChange);

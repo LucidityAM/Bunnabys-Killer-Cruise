@@ -109,7 +109,9 @@ public class SlashE : MonoBehaviour
         isCooldown = true;
         //anim stuff
 
-        yield return new WaitForSeconds(.5f);
+        pAnim.SetBool("isSlicing", true);
+
+        yield return new WaitForSeconds(.3f);
         Slash();
 
         //anim stuff
@@ -119,6 +121,8 @@ public class SlashE : MonoBehaviour
     void Slash()
     {
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 5);
+
+        pAnim.SetBool("isSlicing", false);
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
