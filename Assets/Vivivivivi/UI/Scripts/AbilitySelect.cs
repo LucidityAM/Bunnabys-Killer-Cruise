@@ -64,6 +64,7 @@ public class AbilitySelect : MonoBehaviour
     {
         menuOpen = true;
         abilityCanvas.SetActive(true);
+        Cursor.visible = true;
         StartCoroutine("DisplayBannersCor");
     }
 
@@ -72,6 +73,7 @@ public class AbilitySelect : MonoBehaviour
         menuOpen = false;
         closing = true;
         StartCoroutine("DisplayBannersCor");
+        Cursor.visible = false;
     }
 
     public IEnumerator DisplayBannersCor()
