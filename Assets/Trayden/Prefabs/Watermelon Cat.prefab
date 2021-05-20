@@ -536,9 +536,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemySpawner: {fileID: 0}
   speed: 15
   hitColliders: []
+  waveSystem: {fileID: 0}
 --- !u!1 &7552435245210250367
 GameObject:
   m_ObjectHideFlags: 0
