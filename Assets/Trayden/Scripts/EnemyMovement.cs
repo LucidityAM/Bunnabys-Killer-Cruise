@@ -15,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, 2f, gameObject.transform.position.z);
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed * Time.deltaTime);
 
         hitColliders = Physics.OverlapSphere(this.transform.position, 5f);
