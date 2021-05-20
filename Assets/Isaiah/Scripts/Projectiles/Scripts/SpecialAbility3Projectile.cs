@@ -19,7 +19,7 @@ public class SpecialAbility3Projectile : MonoBehaviour
 
     IEnumerator DestroyObject()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(300);
         Destroy(gameObject);
     }
 

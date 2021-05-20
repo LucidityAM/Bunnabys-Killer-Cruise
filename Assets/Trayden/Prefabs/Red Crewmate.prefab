@@ -455,8 +455,8 @@ Transform:
   m_LocalPosition: {x: 8.9, y: 3, z: -14.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7552435245210250360}
   - {fileID: 7552435245757168085}
+  - {fileID: 7552435245210250360}
   - {fileID: 8915466967241951704}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -510,6 +510,12 @@ MonoBehaviour:
   damage: 20
   critChance: 0
   isDebuffed: 0
+  shakeTimeRemaining: 0
+  shakePower: 0
+  shakeFadeTime: 0
+  shakeRotation: 0
+  roatationMultipler: 15
+  waveSystem: {fileID: 0}
 --- !u!65 &7552435245173722129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -538,7 +544,6 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 15
   hitColliders: []
-  waveSystem: {fileID: 0}
 --- !u!1 &7552435245210250367
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +573,7 @@ Transform:
   m_Children:
   - {fileID: 7552435244229712406}
   m_Father: {fileID: 7552435245173722135}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7552435245757168084
 GameObject:
@@ -601,7 +606,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7552435245173722135}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -45, y: 0, z: 0}
 --- !u!212 &7552435245757168081
 SpriteRenderer:

@@ -42,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ocean
+    uniqueID: 930421385
+    locked: 0
+  - name: BG
+    uniqueID: 382685709
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
