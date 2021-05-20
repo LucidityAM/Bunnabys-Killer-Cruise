@@ -15,6 +15,12 @@ public class CharacterInfo : MonoBehaviour
     public float damage;
     public float critChance;
     public bool isDebuffed;
+    public GameObject waveSystem;
+
+    void Awake()
+    {
+        waveSystem = GameObject.FindGameObjectWithTag("WaveSystem");
+    }
 
     //Private float critMultipler
     float critMultiplier = 1.5f;
@@ -35,7 +41,9 @@ public class CharacterInfo : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);  
+            this.gameObject.tag = "DeadEnemy";
+            waveSystem.GetComponent<EnemySpawning>().UpdateEnemies();
+            Destroy(gameObject); 
         }
     }
 

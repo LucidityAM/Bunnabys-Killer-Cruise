@@ -14,19 +14,21 @@ public class EnemySpawning : MonoBehaviour
     public float x;
     public float z;
     public int roundNumber = 1;
-    private int totalCycles = 0;
-    private bool isRoundOngoing = false;
+    public int totalCycles = 0;
+    public bool isRoundOngoing = false;
+    public bool allEnemiesDead = false;
     void Update()
     {
         if(waveSystem.roundState == 1 && isRoundOngoing == false)
         {
             StartCoroutine(RoundGen(roundNumber));
         }
-        if(enemies == null)
+        if(allEnemiesDead == true)
         {
             waveSystem.roundState = 2;
             roundNumber++;
             isRoundOngoing = false;
+            allEnemiesDead = false;
         }
     }
     public IEnumerator RoundGen(int roundNumber)
@@ -60,10 +62,23 @@ public class EnemySpawning : MonoBehaviour
         }
         else
         {
-            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            UpdateEnemies();
             totalCycles = 0;
             isRoundOngoing = true;
             yield return null;
+        }
+    }
+
+    public void UpdateEnemies()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if(enemies.Length == 0)
+        {
+            allEnemiesDead = true;
+        }
+        else
+        {
+            return;
         }
     }
 }
