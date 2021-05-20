@@ -385,7 +385,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &73520794
 GameObject:
@@ -683,7 +683,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 96.94, y: -94.7, z: 0}
 --- !u!1 &122240270
 GameObject:
@@ -2054,10 +2054,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilitySelect: {fileID: 1661278242}
   roundState: 0
-  currentWave: 0
-  wave1: {fileID: 0}
-  wave2: {fileID: 0}
-  wave3: {fileID: 0}
 --- !u!4 &452532577
 Transform:
   m_ObjectHideFlags: 0
@@ -2084,6 +2080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62076d4d41727bc22a281b3652ddcb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crewmate: {fileID: 0}
   greenCrew: {fileID: 7552435245173722132, guid: 0b1d6aad0c157d33bbaf22f4698523af,
     type: 3}
   blueCrew: {fileID: 7552435245173722132, guid: deaaa0dfe427ac1ce83413546aafeda6,
@@ -2093,12 +2090,14 @@ MonoBehaviour:
     type: 3}
   waterCat: {fileID: 7552435245173722132, guid: 8863b99770fb1d2ca8f4def4b9ecfe29,
     type: 3}
-  waveSystem: {fileID: 0}
+  waveSystem: {fileID: 452532576}
   enemies: []
   x: 0
   z: 0
+  waveNumber: 0
   roundNumber: 1
   totalCycles: 0
+  specialEnemy: 0
   isRoundOngoing: 0
   allEnemiesDead: 0
 --- !u!1 &463077343
@@ -8131,7 +8130,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1661278242 stripped
 MonoBehaviour:
@@ -9968,100 +9967,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1994668180
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6821215336247212978, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6821215336247212978, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722130, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722130, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722132, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_Name
-      value: Blue Crewmate
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -14.49
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245173722135, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7552435245757168081, guid: deaaa0dfe427ac1ce83413546aafeda6,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: deaaa0dfe427ac1ce83413546aafeda6, type: 3}
 --- !u!1 &2008350120
 GameObject:
   m_ObjectHideFlags: 0

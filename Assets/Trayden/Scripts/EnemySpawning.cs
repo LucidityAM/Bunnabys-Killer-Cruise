@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawning : MonoBehaviour
 {
+    public GameObject crewmate;
     public GameObject greenCrew;
     public GameObject blueCrew;
     public GameObject redCrew;
@@ -13,10 +14,16 @@ public class EnemySpawning : MonoBehaviour
     public GameObject[] enemies;
     public float x;
     public float z;
+    public int waveNumber = 0;
     public int roundNumber = 1;
     public int totalCycles = 0;
+    public int specialEnemy = 0;
     public bool isRoundOngoing = false;
     public bool allEnemiesDead = false;
+    void Start() 
+    {
+        crewmate = greenCrew;
+    }
     void Update()
     {
         if(waveSystem.roundState == 1 && isRoundOngoing == false)
@@ -30,35 +37,68 @@ public class EnemySpawning : MonoBehaviour
             isRoundOngoing = false;
             allEnemiesDead = false;
         }
+        if(roundNumber > 6)
+        {
+            waveNumber++;
+            if(waveNumber == 1)
+            {
+                crewmate = blueCrew;
+            }
+            else
+            {
+                crewmate = redCrew;
+            }
+            roundNumber = 1;
+        }
     }
     public IEnumerator RoundGen(int roundNumber)
     {
         if(roundNumber == 1 || roundNumber == 2)
         {
-            StartCoroutine(SpawnRound(roundNumber));
+            StartCoroutine("RandomiseSpecialEnemy");
+            StartCoroutine(SpawnWave1Round(roundNumber, specialEnemy));
         }
         else if(roundNumber == 3 || roundNumber == 4)
         {
-            StartCoroutine(SpawnRound(roundNumber + 1));
+            StartCoroutine("RandomiseSpecialEnemy");
+            StartCoroutine(SpawnWave1Round(roundNumber + 1, specialEnemy));
         }
         else if(roundNumber == 5 || roundNumber == 6)
         {
-            StartCoroutine(SpawnRound(roundNumber + 2));
+            StartCoroutine("RandomiseSpecialEnemy");
+            StartCoroutine(SpawnWave1Round(roundNumber + 2, specialEnemy));
         }
         else
         {
             yield return null;
         }
     }
-    public IEnumerator SpawnRound(int enemyAmount)
+    public IEnumerator RandomiseSpecialEnemy()
+    {
+        specialEnemy = Random.Range(0, 1);
+        yield return null;
+    }
+    public IEnumerator SpawnWave1Round(int enemyAmount, int specialEnemyIdentity)
     {
         x = Random.Range(-20f, 30f);
         z = Random.Range(-47.5f, 29f);
-        Instantiate(greenCrew, new Vector3(x, 0.5f, z), Quaternion.Euler(-90f, -90f, 0f));
+        Instantiate(crewmate, new Vector3(x, 0.5f, z), Quaternion.Euler(-90f, -90f, 0f));
+        if(waveNumber >= 1 && specialEnemyIdentity == 0)
+        {
+            x = Random.Range(-20f, 30f);
+            z = Random.Range(-47.5f, 29f);
+            Instantiate(cocoCrab, new Vector3(x, 0.5f, z), Quaternion.Euler(-90f, -90f, 0f));
+        }
+        else if(waveNumber >= 1 && specialEnemyIdentity == 1)
+        {
+            x = Random.Range(-20f, 30f);
+            z = Random.Range(-47.5f, 29f);
+            Instantiate(waterCat, new Vector3(x, 0.5f, z), Quaternion.Euler(-90f, -90f, 0f));
+        }
         totalCycles++;
         if(totalCycles < enemyAmount)
         {
-            StartCoroutine(SpawnRound(enemyAmount));
+            StartCoroutine(SpawnWave1Round(enemyAmount, specialEnemy));
         }
         else
         {

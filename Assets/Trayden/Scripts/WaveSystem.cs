@@ -8,9 +8,6 @@ public class WaveSystem : MonoBehaviour
 
     //0 = pre, 1 = round, 2 = post
     public int roundState;
-    public int currentWave;
-
-    public Wave wave1, wave2, wave3;
 
     private bool opened;
     // Start is called before the first frame update
@@ -32,6 +29,11 @@ public class WaveSystem : MonoBehaviour
         } else
         {
             PostRound();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+            roundState = 1;
         }
     }
 
