@@ -44,6 +44,14 @@ public class SpecialWeapon1 : MonoBehaviour
 
     void Update()
     {
+        if(dashAmount >= 3)
+        {
+            dashAmount = 3;
+            cooldownImage.fillAmount = 1;
+            cooldownBorder.fillAmount = 1;
+            isCooldown = false;
+        }
+
         DashAbility();
 
         RaycastHit hit;
@@ -93,7 +101,7 @@ public class SpecialWeapon1 : MonoBehaviour
             }
         }
 
-        if (isCooldown || dashAmount <= 3)
+        if (isCooldown || dashAmount < 3)
         {
             cooldownImage.fillAmount += 1 / cooldown * Time.deltaTime;
 

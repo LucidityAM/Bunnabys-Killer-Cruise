@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterInfo : MonoBehaviour
 {
@@ -19,11 +20,15 @@ public class CharacterInfo : MonoBehaviour
     public float shakeTimeRemaining, shakePower = 1, shakeFadeTime, shakeRotation;
     public float roatationMultipler = 15;
     public GameObject waveSystem;
+    public ParticleSystem deathParticles;
+
+    public AudioSource dmgSound;
 
     void Awake()
     {
         shakePower = 1;
         waveSystem = GameObject.FindGameObjectWithTag("WaveSystem");
+        dmgSound = this.gameObject.GetComponent<AudioSource>();
     }
 
     //Private float critMultipler
@@ -49,6 +54,8 @@ public class CharacterInfo : MonoBehaviour
 
     public void TakeDamage(float damageDealt, float opposingCritChance)
     {
+        dmgSound.Play();
+
         System.Random rnd = new System.Random();
         if (rnd.Next(0, 100) < opposingCritChance)
         {
@@ -63,9 +70,16 @@ public class CharacterInfo : MonoBehaviour
 
         if (health <= 0)
         {
+            if (gameObject.CompareTag("Player"))
+            {
+                SceneManager.LoadScene(1);
+            }
+
             this.gameObject.tag = "DeadEnemy";
             waveSystem.GetComponent<EnemySpawning>().UpdateEnemies();
-            Destroy(gameObject); 
+            Destroy(gameObject);
+            Instantiate(deathParticles, transform.position, transform.rotation);
+
         }
     }
 
@@ -79,5 +93,4 @@ public class CharacterInfo : MonoBehaviour
         shakeEnemy = false;
         this.gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
-
 }

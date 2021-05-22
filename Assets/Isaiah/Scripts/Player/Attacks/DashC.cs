@@ -12,6 +12,7 @@ public class DashC : MonoBehaviour
     RaycastHit hit;
     PlayerController moveScript;
     EnemyMovement enemyHit;
+    public GameObject dashLines;
 
     [Header("Grand Entrance (C)")]
     public Image dashImage; public Image dashBorderImage;
@@ -130,7 +131,7 @@ public class DashC : MonoBehaviour
         //anim stuff
 
         yield return new WaitForSeconds(.2f);
-        MovementDash();
+        StartCoroutine(MovementDash());
 
         pAnim.SetBool("isSlicing", true);
         yield return new WaitForSeconds(0.5f);
@@ -140,7 +141,7 @@ public class DashC : MonoBehaviour
         moveScript.speed = currentSpeed;
     }
 
-    public void MovementDash()
+    public IEnumerator MovementDash()
     {
         float dashAmount = 200f;
 
@@ -152,11 +153,22 @@ public class DashC : MonoBehaviour
             position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
         }
 
+        dashLines.SetActive(true);
+
+        Quaternion transRot = Quaternion.LookRotation(this.transform.position - position);
+        transRot.eulerAngles = new Vector3(0, transRot.eulerAngles.y, transRot.eulerAngles.z);
+
+        dashLines.transform.rotation = Quaternion.Lerp(transRot, dashLines.transform.rotation, 0f);
+
         Vector3 moveDirection = (transform.position - position);
         moveDirection.y = 0;
         moveDirection.Normalize();
 
         moveScript.r.AddForce(-moveDirection * dashAmount, ForceMode.VelocityChange);
+
+        yield return new WaitForSeconds(.2f);
+
+        dashLines.SetActive(false);
     }
 
     void KnockUp()
@@ -172,7 +184,7 @@ public class DashC : MonoBehaviour
                 if (hitColliders[i].isTrigger)
                 {
                     hitColliders[i].gameObject.GetComponent<CharacterInfo>().TakeDamage(damage, 0);
-                    //StartCoroutine(CC(hitColliders[i].gameObject));
+                    StartCoroutine(CC(hitColliders[i].gameObject));
                 }
             }
         }
@@ -180,11 +192,17 @@ public class DashC : MonoBehaviour
 
     public IEnumerator CC(GameObject enemy)
     {
-        enemy.GetComponent<EnemyMovement>().enabled = false;
-
+        if(enemy != null)
+        {
+            enemy.GetComponent<EnemyMovement>().enabled = false;
+        }
+        
         yield return new WaitForSeconds(.5f);
 
-        enemy.GetComponent<EnemyMovement>().enabled = true;
+        if (enemy != null)
+        {
+            enemy.GetComponent<EnemyMovement>().enabled = true;
+        }
     }
 }
 
