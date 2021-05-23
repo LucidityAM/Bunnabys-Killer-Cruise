@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class AbilitySelect : MonoBehaviour
 {
@@ -23,6 +24,9 @@ public class AbilitySelect : MonoBehaviour
     private SpecialWeapon1 dash;
     private SpecialWeapon2 field;
     private SpecialWeapon3 laser;
+    public EventTrigger dashDesc;
+    public GameObject fieldDesc;
+    public GameObject laserDesc;
 
     public Sprite[] rSprites;
 
@@ -42,6 +46,10 @@ public class AbilitySelect : MonoBehaviour
         field = player.GetComponent<SpecialWeapon2>();
         laser = player.GetComponent<SpecialWeapon3>();
 
+        dashDesc.enabled = true;
+        fieldDesc.SetActive(false);
+        laserDesc.SetActive(false);
+
         abilityCanvas.SetActive(false);
         menuOpen = false;
         closing = false;
@@ -54,10 +62,7 @@ public class AbilitySelect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            OpenSelect();
-        }
+
     }
 
     public void OpenSelect()
@@ -109,12 +114,20 @@ public class AbilitySelect : MonoBehaviour
             laser.enabled = false;
             dashText.SetActive(true);
 
+            dashDesc.enabled = true;
+            fieldDesc.SetActive(false);
+            laserDesc.SetActive(false);
+
         } else if(ability == 1)
         {
             dash.enabled = false;
             field.enabled = true;
             laser.enabled = false;
             dashText.SetActive(false);
+
+            dashDesc.enabled = false;
+            fieldDesc.SetActive(true);
+            laserDesc.SetActive(false);
         }
         else
         {
@@ -122,6 +135,10 @@ public class AbilitySelect : MonoBehaviour
             field.enabled = false;
             laser.enabled = true;
             dashText.SetActive(false);
+
+            dashDesc.enabled = false;
+            fieldDesc.SetActive(false);
+            laserDesc.SetActive(true);
         }
     }
 }
