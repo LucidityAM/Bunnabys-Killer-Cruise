@@ -37,7 +37,6 @@ public class SpecialWeapon2 : MonoBehaviour
     {
         isClearing = false;
         canDeathField = true;
-        cooldown = 15;
         player = this.gameObject;
         weaponTelegraphing.GetComponent<Image>().enabled = false;
     }

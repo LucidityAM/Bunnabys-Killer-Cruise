@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 5.0f;
     public float gravity = 14.0f;
     public float maxVelocityChange = 10.0f;
+    public AudioSource walk;
 
     //Private variables
     public Rigidbody r;
@@ -80,6 +81,18 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("Speed", targetVelocity.sqrMagnitude);
 
+        if (targetVelocity.magnitude > 0.01)
+        {
+            if (!walk.isPlaying)
+            {
+                walk.Play();
+            }
+        }
+        else
+        {
+            walk.Stop();
+        }
+
         //Applies a force that attempts to reach our target velocity
         Vector3 velocity = r.velocity;
 
@@ -92,6 +105,8 @@ public class PlayerController : MonoBehaviour
 
         //Applies gravity manually for more tuning control
         r.AddForce(new Vector3(0, -gravity * r.mass, 0));
+
+       
 
         //Mouse cursor offset effect
         playerPosOnScreen = playerCamera.WorldToViewportPoint(transform.position);

@@ -9,7 +9,7 @@ public class AutoAttack : MonoBehaviour
 
     GameObject EnemyClicked;
 
-    bool isClicked;
+    public bool isClicked;
 
     CharacterInfo characterInfo;
 
@@ -22,6 +22,8 @@ public class AutoAttack : MonoBehaviour
     public bool isUsingAbility;
 
     public Animator pAnim;
+
+    public AudioSource hitSound;
     // Start is called before the first frame update
     void Awake()
     {
@@ -71,6 +73,8 @@ public class AutoAttack : MonoBehaviour
                         Vector3 directionToTarget = EnemyClicked.transform.position - gameObject.transform.position;
                         float distance = directionToTarget.magnitude;
 
+                        hitSound.Play();
+
                         if (distance > Range)
                         {
                             pAnim.SetBool("isShooting", true);
@@ -79,6 +83,13 @@ public class AutoAttack : MonoBehaviour
                             enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
 
                             enemyInfo.TakeDamage(characterInfo.damage, characterInfo.critChance);
+
+                            if(enemyInfo.health <= 0)
+                            {
+                                pAnim.SetBool("isShooting", false);
+                                pAnim.SetBool("isKnifing", false);
+                                isClicked = false;
+                            }
 
                             yield return new WaitForSeconds(shootingTime);
                         }
@@ -90,6 +101,13 @@ public class AutoAttack : MonoBehaviour
                             enemyInfo = EnemyClicked.GetComponent<CharacterInfo>();
 
                             enemyInfo.TakeDamage(characterInfo.damage * meleeMultiplier, characterInfo.critChance);
+
+                            if (enemyInfo.health <= 0)
+                            {
+                                pAnim.SetBool("isShooting", false);
+                                pAnim.SetBool("isKnifing", false);
+                                isClicked = false;
+                            }
 
                             yield return new WaitForSeconds(shootingTime);
                         }
@@ -109,6 +127,7 @@ public class AutoAttack : MonoBehaviour
             }
             else
             {
+                isClicked = false;
                 pAnim.SetBool("isShooting", false);
                 pAnim.SetBool("isKnifing", false);
                 yield break;

@@ -7,6 +7,8 @@ public class EnemyMovement : MonoBehaviour
     public GameObject player;
     public float speed;
     public Collider[] hitColliders;
+    public bool hasBeenHit = false;
+    public bool iFramesRunning = false;
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -15,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
     {
         gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed * Time.deltaTime);
 
-        hitColliders = Physics.OverlapSphere(this.transform.position, 4.5f);
+        hitColliders = Physics.OverlapSphere(this.transform.position, 5f);
 
         for (int i = 0; i < hitColliders.Length; i++)
         {
@@ -24,12 +26,30 @@ public class EnemyMovement : MonoBehaviour
                 if (hitColliders[i].gameObject.CompareTag("Player"))
                 {
                     speed = 0;
+                    if(hasBeenHit == false)
+                    {
+                        player.GetComponent<CharacterInfo>().TakeDamage(gameObject.GetComponent<CharacterInfo>().damage, 0);
+                        hasBeenHit = true;
+                    }
                 }
                 else
                 {
-                    speed = 13.5f;
+                    speed = 9f;
                 }
             }
         }
+
+        if(hasBeenHit == true && iFramesRunning == false)
+        {
+            StartCoroutine("IFrameCooldown");
+        }
+    }
+
+    public IEnumerator IFrameCooldown()
+    {
+        iFramesRunning = true;
+        yield return new WaitForSeconds(.75f);
+        hasBeenHit = false;
+        iFramesRunning = false;
     }
 }
