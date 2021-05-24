@@ -19,6 +19,7 @@ public class AcidSpot : MonoBehaviour
 
     public void OnTriggerStay(Collider collision) 
     {
+        Debug.Log(collision.gameObject.name);
         if(collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<CharacterInfo>().TakeDamage(damage, 10);

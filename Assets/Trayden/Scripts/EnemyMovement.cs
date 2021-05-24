@@ -19,6 +19,13 @@ public class EnemyMovement : MonoBehaviour
     }
     void Update()
     {
+        if(gameObject.name == "Watermelon Cat(Clone)" && hasSpawnedPuddle == false)
+        {
+            Instantiate(waveSystem.GetComponent<EnemySpawning>().acidPuddle, 
+            new Vector3(gameObject.transform.position.x, 0, gameObject.transform.position.z), Quaternion.identity);
+            hasSpawnedPuddle = true;
+            StartCoroutine("IFrameCooldown");
+        }
         if(gameObject.name != "Coconut Crab(Clone)")
         {        
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, player.transform.position, speed * Time.deltaTime);
@@ -33,13 +40,6 @@ public class EnemyMovement : MonoBehaviour
             new Vector3(gameObject.transform.position.x, 3, gameObject.transform.position.z), Quaternion.identity);
             waveSystem.GetComponent<EnemySpawning>().cocoBullet.GetComponent<CocoProjectile>().targetPos = player.transform.position;
             hasShot = true;
-            StartCoroutine("IFrameCooldown");
-        }
-        else if(gameObject.name == "Watermelon Cat(Clone)" && hasSpawnedPuddle == false)
-        {
-            Instantiate(waveSystem.GetComponent<EnemySpawning>().acidPuddle, 
-            new Vector3(gameObject.transform.position.x, 0.5f, gameObject.transform.position.z), Quaternion.identity);
-            hasSpawnedPuddle = true;
             StartCoroutine("IFrameCooldown");
         }
 
