@@ -11,6 +11,8 @@ public class EnemySpawning : MonoBehaviour
     public GameObject cocoCrab;
     public GameObject waterCat;
     public WaveSystem waveSystem;
+    public GameObject cocoBullet;
+    public GameObject acidPuddle;
     public GameObject[] enemies;
     public float x;
     public float z;
@@ -75,7 +77,7 @@ public class EnemySpawning : MonoBehaviour
     }
     public IEnumerator RandomiseSpecialEnemy()
     {
-        specialEnemy = Random.Range(0, 1);
+        specialEnemy = Random.Range(1, 2);
         yield return null;
     }
     public IEnumerator SpawnWave1Round(int enemyAmount, int specialEnemyIdentity)

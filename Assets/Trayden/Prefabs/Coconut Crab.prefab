@@ -436,8 +436,8 @@ GameObject:
   - component: {fileID: 7552435245173722133}
   - component: {fileID: 7552435245173722128}
   - component: {fileID: 7552435245173722129}
-  - component: {fileID: 7552435245173722130}
   - component: {fileID: -9054058233294498245}
+  - component: {fileID: 3081451271862183374}
   m_Layer: 0
   m_Name: Coconut Crab
   m_TagString: Enemy
@@ -533,23 +533,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.019394, y: 7.436186, z: 7.4400005}
   m_Center: {x: -0.20231819, y: -0.1616869, z: -0.5}
---- !u!114 &7552435245173722130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7552435245173722132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b1154bfbab6cc621b210e6e897c75d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 15
-  hitColliders: []
-  hasBeenHit: 0
-  iFramesRunning: 0
 --- !u!82 &-9054058233294498245
 AudioSource:
   m_ObjectHideFlags: 0
@@ -718,6 +701,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3081451271862183374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552435245173722132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1154bfbab6cc621b210e6e897c75d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  waveSystem: {fileID: 0}
+  speed: 0
+  hitColliders: []
+  hasBeenHit: 0
+  iFramesRunning: 0
 --- !u!1 &7552435245210250367
 GameObject:
   m_ObjectHideFlags: 0
