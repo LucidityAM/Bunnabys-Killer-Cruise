@@ -29,6 +29,8 @@ public class SlingshotQ : MonoBehaviour
     public Image skillshot;
     public Transform player;
 
+    public AudioSource audioSrc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -128,6 +130,8 @@ public class SlingshotQ : MonoBehaviour
 
     public void SpawnProjectile()
     {
+        audioSrc.Play();
+
         pAnim.SetBool("isShooting", false);
 
         canSkillshot = true;

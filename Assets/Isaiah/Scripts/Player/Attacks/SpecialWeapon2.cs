@@ -31,13 +31,14 @@ public class SpecialWeapon2 : MonoBehaviour
 
     public Collider[] hitColliders;
     public GameObject DeathAreaPrefab;
-
+    public AudioSource audioSrc;
 
     void Start()
     {
         isClearing = false;
         canDeathField = true;
         player = this.gameObject;
+        usingDeathField = false;
         weaponTelegraphing.GetComponent<Image>().enabled = false;
     }
 
@@ -146,6 +147,8 @@ public class SpecialWeapon2 : MonoBehaviour
 
     public IEnumerator DeathField()
     {
+        audioSrc.Play();
+
         weaponTelegraphing.GetComponent<Image>().enabled = false;
         usingDeathField = true;
         
