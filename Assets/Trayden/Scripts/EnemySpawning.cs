@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawning : MonoBehaviour
 {
@@ -47,9 +48,13 @@ public class EnemySpawning : MonoBehaviour
             {
                 crewmate = blueCrew;
             }
-            else
+            else if(waveNumber == 2)
             {
                 crewmate = redCrew;
+            }
+            else
+            {
+                SceneManager.LoadScene("Credits");
             }
             roundNumber = 1;
         }
