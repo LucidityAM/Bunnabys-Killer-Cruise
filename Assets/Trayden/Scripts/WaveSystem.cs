@@ -71,14 +71,16 @@ public class WaveSystem : MonoBehaviour
     public void StartWave()
     {
         enemySpawnScript.roundNumber = 1;
-
-        roundState = 1;
         enemySpawnScript.waveNumber++;
         if (enemySpawnScript.waveNumber == 1)
         {
-            enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
+            enemySpawnScript.crewmate = enemySpawnScript.greenCrew;
         }
         else if (enemySpawnScript.waveNumber == 2)
+        {
+            enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
+        }
+        else if (enemySpawnScript.waveNumber == 3)
         {
             enemySpawnScript.crewmate = enemySpawnScript.redCrew;
         }
@@ -86,7 +88,7 @@ public class WaveSystem : MonoBehaviour
         {
             SceneManager.LoadScene("Credits");
         }
-       
+        roundState = 1;
     }
 
 
