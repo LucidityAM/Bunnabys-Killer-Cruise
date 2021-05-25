@@ -17,11 +17,11 @@ public class AcidSpot : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void OnTriggerStay(Collider collision) 
+    public void OnCollisionEnter(Collision collision) 
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<CharacterInfo>().TakeDamage(.5f, 0);
+            collision.gameObject.GetComponent<CharacterInfo>().TakeDamage(damage, 0);
         }
     }
 }
