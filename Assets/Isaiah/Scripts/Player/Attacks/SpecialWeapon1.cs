@@ -30,6 +30,7 @@ public class SpecialWeapon1 : MonoBehaviour
     public bool isCooldown;
     int timesDashed;
 
+    public ParticleSystem dashEffect;
     void Start()
     {
         canDash = true;
@@ -164,6 +165,7 @@ public class SpecialWeapon1 : MonoBehaviour
         }
 
         dashLines.SetActive(true);
+        dashEffect.Play();
 
         Quaternion transRot = Quaternion.LookRotation(player.transform.position - position);
         transRot.eulerAngles = new Vector3(0, transRot.eulerAngles.y, transRot.eulerAngles.z);
@@ -176,8 +178,9 @@ public class SpecialWeapon1 : MonoBehaviour
 
         playerController.r.AddForce(-moveDirection * dashAmount, ForceMode.Impulse);
 
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.4f);
 
+        dashEffect.Stop();
         dashLines.SetActive(false);
     }
 }
