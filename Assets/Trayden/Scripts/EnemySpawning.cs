@@ -40,23 +40,11 @@ public class EnemySpawning : MonoBehaviour
             roundNumber++;
             isRoundOngoing = false;
             allEnemiesDead = false;
+            waveSystem.roundState = 1;
         }
         if(roundNumber > 6)
         {
-            waveNumber++;
-            if(waveNumber == 1)
-            {
-                crewmate = blueCrew;
-            }
-            else if(waveNumber == 2)
-            {
-                crewmate = redCrew;
-            }
-            else
-            {
-                SceneManager.LoadScene("Credits");
-            }
-            roundNumber = 1;
+            waveSystem.roundState = 0;
         }
     }
     public IEnumerator RoundGen(int roundNumber)

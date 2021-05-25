@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaveSystem : MonoBehaviour
 {
     public AbilitySelect abilitySelect;
     public Animator startWaveButton;
+    public EnemySpawning enemySpawnScript;
 
 
     //0 = pre, 1 = round, 2 = post
@@ -36,7 +38,20 @@ public class WaveSystem : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            roundState = 1;
+            enemySpawnScript.waveNumber++;
+            if(enemySpawnScript.waveNumber == 1)
+            {
+                enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
+            }
+            else if(enemySpawnScript.waveNumber == 2)
+            {
+                enemySpawnScript.crewmate = enemySpawnScript.redCrew;
+            }
+            else
+            {
+                SceneManager.LoadScene("Credits");
+            }
+            enemySpawnScript.roundNumber = 1;
         }
     }
 
