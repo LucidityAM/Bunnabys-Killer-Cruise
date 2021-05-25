@@ -2407,7 +2407,10 @@ MonoBehaviour:
   specialEnemy: 0
   isRoundOngoing: 0
   allEnemiesDead: 0
+<<<<<<< HEAD
   waveText: {fileID: 605432465}
+=======
+>>>>>>> parent of 3645a48... meta
 --- !u!1 &457824381
 GameObject:
   m_ObjectHideFlags: 0
