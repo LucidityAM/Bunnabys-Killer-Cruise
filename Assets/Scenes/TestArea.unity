@@ -2356,8 +2356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilitySelect: {fileID: 1661278242}
-  startWaveButton: {fileID: 0}
-  enemySpawnScript: {fileID: 0}
+  startWaveButton: {fileID: 802283081}
+  enemySpawnScript: {fileID: 452532578}
   roundState: 0
 --- !u!4 &452532577
 Transform:
@@ -2396,8 +2396,10 @@ MonoBehaviour:
   waterCat: {fileID: 7552435245173722132, guid: 8863b99770fb1d2ca8f4def4b9ecfe29,
     type: 3}
   waveSystem: {fileID: 452532576}
-  cocoBullet: {fileID: 0}
-  acidPuddle: {fileID: 0}
+  cocoBullet: {fileID: 2471058621772727011, guid: d2a3ec11e0cdefa5b84e12aa150bb278,
+    type: 3}
+  acidPuddle: {fileID: 7307033913052109625, guid: 177465cc54173a87eb26dc60b512fecc,
+    type: 3}
   enemies: []
   x: 0
   z: 0
@@ -2407,7 +2409,11 @@ MonoBehaviour:
   specialEnemy: 0
   isRoundOngoing: 0
   allEnemiesDead: 0
+<<<<<<< HEAD
   waveText: {fileID: 0}
+=======
+  waveText: {fileID: 605432465}
+>>>>>>> 1e57a2b2bdfdfaf286bdef280b90e932454881cf
 --- !u!1 &457824381
 GameObject:
   m_ObjectHideFlags: 0
@@ -3446,6 +3452,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &605432465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2617052241872890341, guid: b44e85b343989d04fab84cde0c5ea05c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1703190814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &615177662
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,6 +4035,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 423496292081841138, guid: 89acc5e9ddd510c4584aed81ef0d63ce,
         type: 3}
+    - target: {fileID: 1480661695, guid: 4c76f00070b537e49940202830564c4e, type: 3}
+      propertyPath: armor
+      value: 43.61
+      objectReference: {fileID: 0}
     - target: {fileID: 1630235197, guid: 4c76f00070b537e49940202830564c4e, type: 3}
       propertyPath: m_Material
       value: 
@@ -4334,6 +4356,12 @@ Transform:
   m_Father: {fileID: 1025680708}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
+--- !u!95 &802283081 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4943336095620543022, guid: b44e85b343989d04fab84cde0c5ea05c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1703190814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &807123428
 GameObject:
   m_ObjectHideFlags: 0
@@ -14512,6 +14540,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010651983787069703, guid: b44e85b343989d04fab84cde0c5ea05c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010651983787069703, guid: b44e85b343989d04fab84cde0c5ea05c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010651983787069703, guid: b44e85b343989d04fab84cde0c5ea05c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010651983787069703, guid: b44e85b343989d04fab84cde0c5ea05c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 452532576}
+    - target: {fileID: 9010651983787069703, guid: b44e85b343989d04fab84cde0c5ea05c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartWave
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010651983787069703, guid: b44e85b343989d04fab84cde0c5ea05c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 9143064475085020421, guid: b44e85b343989d04fab84cde0c5ea05c,
         type: 3}
