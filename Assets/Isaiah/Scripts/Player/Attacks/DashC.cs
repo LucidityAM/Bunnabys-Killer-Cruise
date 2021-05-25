@@ -33,6 +33,7 @@ public class DashC : MonoBehaviour
 
     public float damage;
     public ParticleSystem dashEffect;
+    public AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
@@ -144,6 +145,7 @@ public class DashC : MonoBehaviour
 
     public IEnumerator MovementDash()
     {
+        audioSrc.Play();
         float dashAmount = 200f;
 
         RaycastHit hit;

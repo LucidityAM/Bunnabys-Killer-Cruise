@@ -29,6 +29,8 @@ public class SlashE : MonoBehaviour
     public float damage;
     public float damageScaler;
 
+    public AudioSource audioSrc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,7 +79,7 @@ public class SlashE : MonoBehaviour
             StaticVars.isUsingAbility = false;
             if (canSlash)
             {
-
+                audioSrc.Play();
                 //Call the Animation
                 StartCoroutine("corSlashE");
             }
@@ -120,6 +122,8 @@ public class SlashE : MonoBehaviour
 
     void Slash()
     {
+        
+
         Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 5);
 
         pAnim.SetBool("isSlicing", false);

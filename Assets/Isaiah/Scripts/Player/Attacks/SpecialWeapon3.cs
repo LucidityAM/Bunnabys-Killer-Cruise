@@ -27,6 +27,8 @@ public class SpecialWeapon3 : MonoBehaviour
     public Image skillshot;
     public Transform player;
 
+    public AudioSource audioSrc;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -121,6 +123,8 @@ public class SpecialWeapon3 : MonoBehaviour
 
     public void SpawnProjectile()
     {
+        audioSrc.Play();
+
         pAnim.SetBool("isShooting", false);
         canSkillshot = true;
         Instantiate(projPrefab, projSpawnPoint.transform.position, projSpawnPoint.transform.rotation);

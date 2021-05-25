@@ -31,6 +31,8 @@ public class SpecialWeapon1 : MonoBehaviour
     int timesDashed;
 
     public ParticleSystem dashEffect;
+    public AudioSource audioSrc;
+
     void Start()
     {
         canDash = true;
@@ -134,6 +136,8 @@ public class SpecialWeapon1 : MonoBehaviour
 
     public void Dash()
     {
+        audioSrc.Play();
+
         timesDashed += 1;
 
         dashAmount -= 1;
