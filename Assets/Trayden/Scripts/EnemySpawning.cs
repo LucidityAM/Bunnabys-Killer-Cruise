@@ -29,6 +29,7 @@ public class EnemySpawning : MonoBehaviour
 
     void Start() 
     {
+        waveNumber = 0;
         crewmate = greenCrew;
     }
     void Update()

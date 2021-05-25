@@ -66,7 +66,13 @@ public class WaveSystem : MonoBehaviour
         {
             roundState += 1;
         }
+    }
 
+    public void StartWave()
+    {
+        enemySpawnScript.roundNumber = 1;
+
+        roundState = 1;
         enemySpawnScript.waveNumber++;
         if (enemySpawnScript.waveNumber == 1)
         {
@@ -80,7 +86,7 @@ public class WaveSystem : MonoBehaviour
         {
             SceneManager.LoadScene("Credits");
         }
-        enemySpawnScript.roundNumber = 1;
+       
     }
 
 
