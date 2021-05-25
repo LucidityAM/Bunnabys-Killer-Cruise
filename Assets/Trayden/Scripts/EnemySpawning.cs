@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawning : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class EnemySpawning : MonoBehaviour
     public int specialEnemy = 0;
     public bool isRoundOngoing = false;
     public bool allEnemiesDead = false;
+
+
     void Start() 
     {
         crewmate = greenCrew;
@@ -34,23 +37,14 @@ public class EnemySpawning : MonoBehaviour
         }
         if(allEnemiesDead == true)
         {
-            waveSystem.roundState = 2;
             roundNumber++;
             isRoundOngoing = false;
             allEnemiesDead = false;
+            waveSystem.roundState = 1;
         }
         if(roundNumber > 6)
         {
-            waveNumber++;
-            if(waveNumber == 1)
-            {
-                crewmate = blueCrew;
-            }
-            else
-            {
-                crewmate = redCrew;
-            }
-            roundNumber = 1;
+            waveSystem.roundState = 0;
         }
     }
     public IEnumerator RoundGen(int roundNumber)
