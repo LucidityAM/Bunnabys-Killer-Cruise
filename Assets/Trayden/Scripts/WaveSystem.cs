@@ -67,6 +67,14 @@ public class WaveSystem : MonoBehaviour
             roundState += 1;
         }
 
+<<<<<<< HEAD
+=======
+    public void StartWave()
+    {
+        enemySpawnScript.roundNumber = 1;
+
+        roundState = 1;
+>>>>>>> parent of f0ed21b... Shortened Wave and Round Amounts
         enemySpawnScript.waveNumber++;
         if (enemySpawnScript.waveNumber == 1)
         {
@@ -80,7 +88,11 @@ public class WaveSystem : MonoBehaviour
         {
             SceneManager.LoadScene("Credits");
         }
+<<<<<<< HEAD
         enemySpawnScript.roundNumber = 1;
+=======
+       
+>>>>>>> parent of f0ed21b... Shortened Wave and Round Amounts
     }
 
 

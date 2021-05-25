@@ -2396,10 +2396,8 @@ MonoBehaviour:
   waterCat: {fileID: 7552435245173722132, guid: 8863b99770fb1d2ca8f4def4b9ecfe29,
     type: 3}
   waveSystem: {fileID: 452532576}
-  cocoBullet: {fileID: 2471058621772727011, guid: d2a3ec11e0cdefa5b84e12aa150bb278,
-    type: 3}
-  acidPuddle: {fileID: 7307033913052109625, guid: 177465cc54173a87eb26dc60b512fecc,
-    type: 3}
+  cocoBullet: {fileID: 0}
+  acidPuddle: {fileID: 0}
   enemies: []
   x: 0
   z: 0

@@ -29,6 +29,10 @@ public class EnemySpawning : MonoBehaviour
 
     void Start() 
     {
+<<<<<<< HEAD
+=======
+        waveNumber = 0;
+>>>>>>> parent of f0ed21b... Shortened Wave and Round Amounts
         crewmate = greenCrew;
     }
     void Update()
