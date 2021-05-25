@@ -32,6 +32,7 @@ public class DashC : MonoBehaviour
     public float maxDashDistance;
 
     public float damage;
+    public ParticleSystem dashEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -154,6 +155,7 @@ public class DashC : MonoBehaviour
         }
 
         dashLines.SetActive(true);
+        dashEffect.Play();
 
         Quaternion transRot = Quaternion.LookRotation(this.transform.position - position);
         transRot.eulerAngles = new Vector3(0, transRot.eulerAngles.y, transRot.eulerAngles.z);
@@ -166,8 +168,9 @@ public class DashC : MonoBehaviour
 
         moveScript.r.AddForce(-moveDirection * dashAmount, ForceMode.VelocityChange);
 
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.4f);
 
+        dashEffect.Stop();
         dashLines.SetActive(false);
     }
 
