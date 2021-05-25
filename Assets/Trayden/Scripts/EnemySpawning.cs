@@ -51,6 +51,10 @@ public class EnemySpawning : MonoBehaviour
             if(roundNumber > 3)
             {
                 waveSystem.roundState = 0;
+                if(waveNumber + 1 == 4)
+                {
+                    SceneManager.LoadScene("Credits");
+                }
             }
             else
             {

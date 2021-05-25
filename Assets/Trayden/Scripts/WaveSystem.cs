@@ -80,13 +80,9 @@ public class WaveSystem : MonoBehaviour
         {
             enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
         }
-        else if (enemySpawnScript.waveNumber == 3)
-        {
-            enemySpawnScript.crewmate = enemySpawnScript.redCrew;
-        }
         else
         {
-            SceneManager.LoadScene("Credits");
+            enemySpawnScript.crewmate = enemySpawnScript.redCrew;
         }
         roundState = 1;
     }
