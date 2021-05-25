@@ -22,6 +22,8 @@ public class EnemySpawning : MonoBehaviour
     public int specialEnemy = 0;
     public bool isRoundOngoing = false;
     public bool allEnemiesDead = false;
+
+
     void Start() 
     {
         crewmate = greenCrew;
@@ -34,7 +36,6 @@ public class EnemySpawning : MonoBehaviour
         }
         if(allEnemiesDead == true)
         {
-            waveSystem.roundState = 2;
             roundNumber++;
             isRoundOngoing = false;
             allEnemiesDead = false;

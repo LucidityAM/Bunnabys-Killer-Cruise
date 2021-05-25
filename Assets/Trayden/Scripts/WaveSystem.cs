@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSystem : MonoBehaviour
 {
     public AbilitySelect abilitySelect;
+    public Animator startWaveButton;
+
 
     //0 = pre, 1 = round, 2 = post
     public int roundState;
@@ -40,16 +43,18 @@ public class WaveSystem : MonoBehaviour
     public void PreRound()
     {
         if (opened == false) { abilitySelect.OpenSelect(); opened = true; }
+        startWaveButton.SetBool("isOpen", true);
+
     }
 
     void Round()
     {
-
+        startWaveButton.SetBool("isOpen", false);
     }
 
     void PostRound()
     {
-
+        startWaveButton.SetBool("isOpen", false);
     }
 
 

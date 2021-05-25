@@ -1,7 +1,19 @@
 fileFormatVersion: 2
 guid: be265ff39566c3e47b40e556987120cb
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1953565029310289652
+    second: HUDTrans_0
+  - first:
+      213: -3073765075709608804
+    second: HUDTrans_1
+  - first:
+      213: -7615211509128026845
+    second: HUDTrans_2
+  - first:
+      213: 2046646817772806722
+    second: HUDTrans_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,7 +121,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: HUDTrans_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 14
+        width: 196
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f65aa13b057c1b10800000000000000
+      internalID: 1953565029310289652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDTrans_1
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 14
+        width: 197
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9cb35bf2fac755d0800000000000000
+      internalID: -3073765075709608804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDTrans_2
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 14
+        width: 196
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32525f4ca75515690800000000000000
+      internalID: -7615211509128026845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDTrans_3
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 13
+        width: 198
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 242280aef66276c10800000000000000
+      internalID: 2046646817772806722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
