@@ -25,7 +25,7 @@ public class WaveSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(roundState == 0)
+        if (roundState == 0)
         {
             PreRound();
         } else if (roundState == 1)
@@ -67,35 +67,28 @@ public class WaveSystem : MonoBehaviour
             roundState += 1;
         }
 
-<<<<<<< HEAD
-=======
-    public void StartWave()
-    {
-        enemySpawnScript.roundNumber = 1;
+            enemySpawnScript.roundNumber = 1;
 
-        roundState = 1;
->>>>>>> parent of f0ed21b... Shortened Wave and Round Amounts
-        enemySpawnScript.waveNumber++;
-        if (enemySpawnScript.waveNumber == 1)
-        {
-            enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
-        }
-        else if (enemySpawnScript.waveNumber == 2)
-        {
-            enemySpawnScript.crewmate = enemySpawnScript.redCrew;
-        }
-        else
-        {
-            SceneManager.LoadScene("Credits");
-        }
-<<<<<<< HEAD
-        enemySpawnScript.roundNumber = 1;
-=======
-       
->>>>>>> parent of f0ed21b... Shortened Wave and Round Amounts
+            roundState = 1;
+
+            enemySpawnScript.waveNumber++;
+            if (enemySpawnScript.waveNumber == 1)
+            {
+                enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
+            }
+            else if (enemySpawnScript.waveNumber == 2)
+            {
+                enemySpawnScript.crewmate = enemySpawnScript.redCrew;
+            }
+            else
+            {
+                SceneManager.LoadScene("Credits");
+            }
+            enemySpawnScript.roundNumber = 1;
+        
+
+
     }
-
-
 }
  
 
