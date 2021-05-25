@@ -93,7 +93,8 @@ MonoBehaviour:
   aName: {fileID: 2732444488962841445}
   aDescription: {fileID: 8558491733831585771}
   dName: (E) Claw Slash
-  description: Bunnaby slashes her claws in an area surrounding her.
+  description: Bunnaby slashes her claws in an area surrounding her, dealing damage
+    proportional to the health of the affected enemies
   offsetX: 220
   offsetY: 150
 --- !u!114 &3876048674342607452
@@ -232,7 +233,8 @@ MonoBehaviour:
   aName: {fileID: 2732444488962841445}
   aDescription: {fileID: 8558491733831585771}
   dName: (Q) Slingshot
-  description: Bunnaby shoots a ball dealing a light amount of damage.
+  description: Bunnaby shoots a fast moving projectile that deals a decent amount
+    of damage to one enemy.
   offsetX: 220
   offsetY: 150
 --- !u!114 &1571204598537460934
@@ -839,7 +841,8 @@ MonoBehaviour:
   aName: {fileID: 2732444488962841445}
   aDescription: {fileID: 8558491733831585771}
   dName: (C) asdjhisajnf
-  description: dfgshshshfgshgshsfhshshsh
+  description: Bunnaby dashes anywhere within a set radius, dealing damage in a radius
+    upon impact and stunning enemies for a short time
   offsetX: 220
   offsetY: 150
 --- !u!114 &4969956382090739034
@@ -885,6 +888,84 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &2046974281273701838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4577761559471106363}
+  - component: {fileID: 4324026727435962029}
+  - component: {fileID: 2617052241872890341}
+  m_Layer: 5
+  m_Name: awesometext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4577761559471106363
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046974281273701838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1581965647643768416}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.9016875, y: 0.81000006}
+  m_AnchorMax: {x: 1, y: 0.9842223}
+  m_AnchoredPosition: {x: 0.6199951, y: 0}
+  m_SizeDelta: {x: -2.2469482, y: -1.0058594}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4324026727435962029
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046974281273701838}
+  m_CullTransparentMesh: 0
+--- !u!114 &2617052241872890341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046974281273701838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8a39ee8c0f18bef40809a2ac29c8dc27, type: 3}
+    m_FontSize: 150
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 150
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: ' 1 / 3'
 --- !u!1 &2314721276664433204
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +1094,84 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: (Q) Slingshot
+--- !u!1 &3582709367984891500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7733703014910473752}
+  - component: {fileID: 4173141118611079083}
+  - component: {fileID: 4812382333933015435}
+  m_Layer: 5
+  m_Name: Wave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7733703014910473752
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582709367984891500}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1581965647643768416}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.84152085, y: 0.9168519}
+  m_AnchorMax: {x: 0.89385426, y: 1}
+  m_AnchoredPosition: {x: 0, y: -0.19274902}
+  m_SizeDelta: {x: -0.72509766, y: 0.38521576}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &4173141118611079083
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582709367984891500}
+  m_CullTransparentMesh: 0
+--- !u!114 &4812382333933015435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3582709367984891500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 8a39ee8c0f18bef40809a2ac29c8dc27, type: 3}
+    m_FontSize: 70
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 200
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "WAVE  \n"
 --- !u!1 &4318572447611699742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1985,6 +2144,8 @@ RectTransform:
   m_Children:
   - {fileID: 2535621650597056895}
   - {fileID: 4316630877738754408}
+  - {fileID: 7733703014910473752}
+  - {fileID: 4577761559471106363}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EnemySpawning : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class EnemySpawning : MonoBehaviour
     public bool isRoundOngoing = false;
     public bool allEnemiesDead = false;
 
+    public Text waveText;
 
     void Start() 
     {
@@ -46,6 +48,8 @@ public class EnemySpawning : MonoBehaviour
         {
             waveSystem.roundState = 0;
         }
+
+        waveText.text = waveNumber + " / 3";
     }
     public IEnumerator RoundGen(int roundNumber)
     {

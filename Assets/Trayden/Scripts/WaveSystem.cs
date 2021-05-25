@@ -35,24 +35,6 @@ public class WaveSystem : MonoBehaviour
         {
             PostRound();
         }
-
-        if(Input.GetKeyDown(KeyCode.Return))
-        {
-            enemySpawnScript.waveNumber++;
-            if(enemySpawnScript.waveNumber == 1)
-            {
-                enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
-            }
-            else if(enemySpawnScript.waveNumber == 2)
-            {
-                enemySpawnScript.crewmate = enemySpawnScript.redCrew;
-            }
-            else
-            {
-                SceneManager.LoadScene("Credits");
-            }
-            enemySpawnScript.roundNumber = 1;
-        }
     }
 
     public void PreRound()
@@ -84,5 +66,24 @@ public class WaveSystem : MonoBehaviour
         {
             roundState += 1;
         }
+
+        enemySpawnScript.waveNumber++;
+        if (enemySpawnScript.waveNumber == 1)
+        {
+            enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
+        }
+        else if (enemySpawnScript.waveNumber == 2)
+        {
+            enemySpawnScript.crewmate = enemySpawnScript.redCrew;
+        }
+        else
+        {
+            SceneManager.LoadScene("Credits");
+        }
+        enemySpawnScript.roundNumber = 1;
     }
+
+
 }
+ 
+
