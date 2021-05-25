@@ -66,25 +66,21 @@ public class WaveSystem : MonoBehaviour
         {
             roundState += 1;
         }
-    }
 
-    public void StartWave()
-    {
-        enemySpawnScript.roundNumber = 1;
         enemySpawnScript.waveNumber++;
         if (enemySpawnScript.waveNumber == 1)
         {
-            enemySpawnScript.crewmate = enemySpawnScript.greenCrew;
+            enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
         }
         else if (enemySpawnScript.waveNumber == 2)
         {
-            enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
+            enemySpawnScript.crewmate = enemySpawnScript.redCrew;
         }
         else
         {
-            enemySpawnScript.crewmate = enemySpawnScript.redCrew;
+            SceneManager.LoadScene("Credits");
         }
-        roundState = 1;
+        enemySpawnScript.roundNumber = 1;
     }
 
 
