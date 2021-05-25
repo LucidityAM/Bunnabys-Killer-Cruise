@@ -67,7 +67,30 @@ public class WaveSystem : MonoBehaviour
             roundState += 1;
         }
 
+<<<<<<< HEAD
             enemySpawnScript.roundNumber = 1;
+=======
+    public void StartWave()
+    {
+        enemySpawnScript.roundNumber = 1;
+
+        roundState = 1;
+        enemySpawnScript.waveNumber++;
+        if (enemySpawnScript.waveNumber == 1)
+        {
+            enemySpawnScript.crewmate = enemySpawnScript.blueCrew;
+        }
+        else if (enemySpawnScript.waveNumber == 2)
+        {
+            enemySpawnScript.crewmate = enemySpawnScript.redCrew;
+        }
+        else
+        {
+            SceneManager.LoadScene("Credits");
+        }
+       
+    }
+>>>>>>> parent of f0ed21b... Shortened Wave and Round Amounts
 
             roundState = 1;
 
