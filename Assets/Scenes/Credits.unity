@@ -309,26 +309,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1978552175151588814, guid: 0f834fdc06d9c144793c59cf43b57cad,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -733.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1978552175151588814, guid: 0f834fdc06d9c144793c59cf43b57cad,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 464.7323
-      objectReference: {fileID: 0}
-    - target: {fileID: 1978552175151588814, guid: 0f834fdc06d9c144793c59cf43b57cad,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 141
-      objectReference: {fileID: 0}
-    - target: {fileID: 1978552175151588814, guid: 0f834fdc06d9c144793c59cf43b57cad,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 81.56566
-      objectReference: {fileID: 0}
     - target: {fileID: 4823066490997072117, guid: 0f834fdc06d9c144793c59cf43b57cad,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -434,21 +414,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5461273501975224687, guid: 0f834fdc06d9c144793c59cf43b57cad,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 21300000, guid: 771e962bbadfc094d94a01485184798b,
-        type: 3}
     - target: {fileID: 5907453900660617838, guid: 0f834fdc06d9c144793c59cf43b57cad,
         type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 8909954738722930398, guid: 0f834fdc06d9c144793c59cf43b57cad,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f834fdc06d9c144793c59cf43b57cad, type: 3}
