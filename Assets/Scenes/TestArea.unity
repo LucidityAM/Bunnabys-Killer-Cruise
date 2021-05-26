@@ -2358,6 +2358,7 @@ MonoBehaviour:
   abilitySelect: {fileID: 1661278242}
   startWaveButton: {fileID: 802283081}
   enemySpawnScript: {fileID: 452532578}
+  player: {fileID: 0}
   roundState: 0
 --- !u!4 &452532577
 Transform:
@@ -4025,7 +4026,7 @@ PrefabInstance:
       objectReference: {fileID: 1891315546}
     - target: {fileID: 1480661695, guid: 4c76f00070b537e49940202830564c4e, type: 3}
       propertyPath: damage
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1480661695, guid: 4c76f00070b537e49940202830564c4e, type: 3}
       propertyPath: deathParticles
@@ -4034,7 +4035,19 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1480661695, guid: 4c76f00070b537e49940202830564c4e, type: 3}
       propertyPath: armor
-      value: 43.61
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480661695, guid: 4c76f00070b537e49940202830564c4e, type: 3}
+      propertyPath: health
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480661695, guid: 4c76f00070b537e49940202830564c4e, type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1480661695, guid: 4c76f00070b537e49940202830564c4e, type: 3}
+      propertyPath: attackSpeed
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 1630235197, guid: 4c76f00070b537e49940202830564c4e, type: 3}
       propertyPath: m_Material
@@ -4072,7 +4085,7 @@ PrefabInstance:
     - target: {fileID: 1165167763297840665, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: damage
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1165167763297840665, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
@@ -4217,7 +4230,7 @@ PrefabInstance:
     - target: {fileID: 3681553138604505472, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: damage
-      value: 25
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3681553138604505472, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}

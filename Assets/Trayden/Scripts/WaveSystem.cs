@@ -10,6 +10,8 @@ public class WaveSystem : MonoBehaviour
     public Animator startWaveButton;
     public EnemySpawning enemySpawnScript;
 
+    public GameObject player;
+
 
     //0 = pre, 1 = round, 2 = post
     public int roundState;
@@ -18,6 +20,7 @@ public class WaveSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         roundState = 0;
         opened = false;
     }
@@ -42,6 +45,7 @@ public class WaveSystem : MonoBehaviour
         if (opened == false) { abilitySelect.OpenSelect(); opened = true; }
         startWaveButton.SetBool("isOpen", true);
 
+        player.GetComponent<CharacterInfo>().health = player.GetComponent<CharacterInfo>().maxHealth;
     }
 
     void Round()
