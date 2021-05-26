@@ -39,6 +39,8 @@ public class CharacterInfo : MonoBehaviour
 
     void Update()
     {
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x, 2, gameObject.transform.position.z);
+
         if (shakeEnemy == true)
         {
             float xAmount = Random.Range(-0.1f, 0.1f) * shakePower;
