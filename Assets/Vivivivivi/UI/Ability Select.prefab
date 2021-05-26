@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.74509805}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.85882354}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -644,6 +644,9 @@ MonoBehaviour:
   rAbilityImage: {fileID: 0}
   rAbilityImageFill: {fileID: 0}
   dashText: {fileID: 0}
+  dashDesc: {fileID: 0}
+  fieldDesc: {fileID: 0}
+  laserDesc: {fileID: 0}
   rSprites:
   - {fileID: 21300000, guid: 3b9059efa6057134a9f6f01de7274958, type: 3}
   - {fileID: 21300000, guid: 5e5bb94bf410a3d429587df15fea4492, type: 3}
