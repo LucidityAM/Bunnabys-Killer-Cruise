@@ -11,6 +11,7 @@ public class CreditScript : MonoBehaviour
     void Start()
     {
         credit.SetActive(false);
+        Cursor.visible = true;
     }
 
     // Update is called once per frame

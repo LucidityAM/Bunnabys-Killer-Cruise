@@ -38,7 +38,7 @@ public class PauseScript : MonoBehaviour
 
     public IEnumerator Resume()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         pauseMenu.SetActive(false);
         isPaused = false;
 
