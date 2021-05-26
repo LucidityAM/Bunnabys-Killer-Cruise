@@ -4207,6 +4207,41 @@ PrefabInstance:
       propertyPath: hitSound
       value: 
       objectReference: {fileID: 1480661701}
+    - target: {fileID: 2039129841120513753, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039129841120513753, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039129841120513753, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039129841120513753, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1480661689}
+    - target: {fileID: 2039129841120513753, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StartCor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039129841120513753, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2039129841120513753, guid: 4c76f00070b537e49940202830564c4e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Resume
+      objectReference: {fileID: 0}
     - target: {fileID: 3102800085152501195, guid: 4c76f00070b537e49940202830564c4e,
         type: 3}
       propertyPath: m_SortingOrder
@@ -12809,6 +12844,18 @@ MonoBehaviour:
   skillshot: {fileID: 122240272}
   player: {fileID: 1480661698}
   audioSrc: {fileID: 1822451910}
+--- !u!114 &1480661689 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6652177769759607020, guid: 4c76f00070b537e49940202830564c4e,
+    type: 3}
+  m_PrefabInstance: {fileID: 714194110}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480661687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbae86145c27a4b419704dd12931a90f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1480661698 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1550797065349217419, guid: 4c76f00070b537e49940202830564c4e,
