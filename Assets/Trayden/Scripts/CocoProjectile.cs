@@ -24,7 +24,7 @@ public class CocoProjectile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<CharacterInfo>().TakeDamage(damage, 25);
+            collision.gameObject.GetComponent<CharacterInfo>().TakeDamage(damage, 0);
             Destroy(gameObject);
         }
         else
