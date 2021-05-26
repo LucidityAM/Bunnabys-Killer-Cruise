@@ -840,7 +840,7 @@ MonoBehaviour:
   prefAbilityDesc: {fileID: 1391087134962608164}
   aName: {fileID: 2732444488962841445}
   aDescription: {fileID: 8558491733831585771}
-  dName: (C) asdjhisajnf
+  dName: (C) Tackle
   description: Bunnaby dashes anywhere within a set radius, dealing damage in a radius
     upon impact and stunning enemies for a short time
   offsetX: 220

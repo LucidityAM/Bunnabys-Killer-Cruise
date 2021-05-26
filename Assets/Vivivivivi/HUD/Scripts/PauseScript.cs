@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
-    #region things that need to be turned off 
-    public List<MonoBehaviour> pausedScripts;
-    #endregion
-
     private bool isPaused = false;
 
     public GameObject pauseMenu;
@@ -35,7 +31,6 @@ public class PauseScript : MonoBehaviour
 
     public IEnumerator Pause()
     {
-        ChangeScripts();
         pauseMenu.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         isPaused = true;
@@ -43,7 +38,6 @@ public class PauseScript : MonoBehaviour
 
     public IEnumerator Resume()
     {
-        ChangeScripts();
         yield return new WaitForSeconds(0.5f);
         pauseMenu.SetActive(false);
         isPaused = false;
@@ -53,12 +47,5 @@ public class PauseScript : MonoBehaviour
     public void StartCor(string corName)
     {
         StartCoroutine(corName);
-    }
-    public void ChangeScripts()
-    {
-        foreach(MonoBehaviour mono in pausedScripts)
-        {
-            mono.enabled = isPaused;
-        }
     }
 }

@@ -30,7 +30,7 @@ public class MusicManager : MonoBehaviour
         {
             playedPR = false;
             audio.clip = battle;
-            if (playedB) { audio.Play(); playedB = true; }
+            if (!playedB) { audio.Play(); playedB = true; }
         }
     }
 }
